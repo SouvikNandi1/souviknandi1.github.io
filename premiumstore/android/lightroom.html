@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightroom Premium Download - Disunic</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/dark.css">
+    <link rel="stylesheet" href="./style/light.css">
+    <script src="/premiumstore/js/style.js"></script>
+    <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body onload="themecheck()" class="body" id="body">
+    <div class="main">
+        <div class="nav" id="nav">
+            <i id="bilight" class="bi bi-brightness-low" onclick="lightmode()"></i>
+            <i id="bidark" class="bi bi-brightness-low-fill" onclick="darkmode()"></i>
+        </div>
+        <div class="content">
+            <img src="/premiumstore/imgs/android/lightroom.png" alt="">
+            <p>Lightroom</p>
+        </div>
+        <div class="link" onclick="link()">
+            <p>Download Now</p>
+        </div>
+        <div class="size">
+            <p>Size - 240 MB</p>
+        </div>
+        <div class="features">
+            <p>1. Full Premium Unlocked.</p>
+            <p>2. Make dramatic changes to your photos with a single touch.</p>
+            <p>3. Use these one-tap miracles to create visually striking changes to the look and feel of your photos.</p>
+            <p>4. Make advanced edits to change color, exposure, tone, and contrast.</p>
+            <p>5. Refine and tweak the colors on your photo to make them pop.</p>
+            <p>6. Breathe life into your edits by using these industry-leading tools.</p>
+            <p>7. Easily edit large albums and get consistent looks by copying your favorite edits across photos</p>
+            <p>8. Unlock your phone's potential with unique controls. Choose from exposure, aperture, wide or telephoto lens, instant presets, and more</p>
+            <p>9. Get more detailed shots with advanced capture modes such as raw, professional, and HDR</p>
+            <p>10. Take complete control of your image by removing just about anything from your photo, no matter how big or small</p>
+        </div>
+        <div class="feedback" id="feedback"></div>
+    </div>
+</body>
+<script>
+    function link() {
+        window.open("https://github.com/Disunic/database.android/releases/download/None/Lightroom-Disunic.apk", "_self")
+    }
+</script>
+
+</html>

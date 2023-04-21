@@ -1,0 +1,122 @@
+.dark {
+    background: #1f2533;
+}
+
+.dark select {
+    background: #1f2533;
+    color: white;
+    outline: 0;
+}
+
+.dark .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    background: rgb(44 44 44 / 24%);
+    box-shadow: 0px 0px 1px 1px #0468ff, 0px 0px 10px 2px #ff00d4;
+    border-image: linear-gradient(315deg, #00ddff 0%, #ff00d4 74%) 80;
+}
+
+.dark .bi-brightness-low {
+    font-size: 35px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #ffffff;
+
+}
+
+.dark .bi-brightness-low-fill {
+    font-size: 35px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #505050;
+    /* display: none; */
+}
+
+.dark #bimore {
+    color: white;
+}
+
+.dark .h2-main {
+    margin: auto;
+    width: fit-content;
+    padding: 0px 5px 5px 5px;
+    color: white;
+    border-bottom: 3px solid #0468ff;
+}
+
+.dark .top {
+    width: 87%;
+    margin: auto;
+    box-shadow: 0px 0px 5px 0px gray;
+    margin-top: 20px;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.dark .top .apps {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    box-shadow: 0px 0px 2px 0px gray;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.dark .top .apps img {
+    width: 65px;
+    border-radius: 10px;
+}
+
+.dark .top .apps p {
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+}
+
+.dark .bottom .content {
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: 15px;
+}
+
+.dark .bottom h2 {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: fit-content;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #0468ff;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dark .bottom .content .apps {
+    margin: 0px 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dark .bottom .content .apps img {
+    width: 85px;
+    border-radius: 25px;
+    background: #1f2533;
+
+}
+
+.dark .bottom .content .apps p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
