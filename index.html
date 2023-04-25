@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -47,7 +48,7 @@
 </head>
 <!-- https://codepen.io/search/pens?q= -->
 
-<body onload="check(),check2(),alwayscheck()" id="body">
+<body onload="singincheck(),check(),check2(),alwayscheck()" id="body">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRKBKPH" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -71,15 +72,16 @@
             <p style="color: #00aaff;">C</p>
         </div>
         <div class="searchcontent" id="searchcontent">
-            <div class="searchbar" id="searchbar">
-                <button style="margin-right: 5px;"><img id="searchch2" style="display: none;background-color: white;"
-                        src="" alt="" onclick="changesearchengine()"></button>
-                <input autocomplete="off" type="text" placeholder="Search Everything Here ..." id="inp" name=""
-                    onclick="inpclick()">
-                <button id="btn" onclick="search()"><i style="font-size: 20px;" class="bi bi-search"></i></button>
-                <button id="btn2" style="display: none;" onclick="inpclickback()"><i class="bi bi-x-lg"
-                        style="font-size: 20px;margin-left: 10px;"></i></button>
-            </div>
+                <div class="searchbar" id="searchbar">
+                    <button style="margin-right: 5px;"><img id="searchch2"
+                            style="display: none;background-color: white;" src="" alt=""
+                            onclick="changesearchengine()"></button>
+                    <input autocomplete="off" type="text" placeholder="Search Everything Here ..." id="inp" name=""
+                        onclick="inpclick()">
+                    <button id="btn" onclick="search()"><i style="font-size: 20px;" class="bi bi-search"></i></button>
+                    <button id="btn2" style="display: none;" onclick="inpclickback()"><i class="bi bi-x-lg"
+                            style="font-size: 20px;margin-left: 10px;"></i></button>
+                </div>
             <div class="moresc" id="moresc">
                 <select name="" id="filetype" onchange="alwayscheck()">
                     <option value="Normal">Normal Search</option>
@@ -113,7 +115,7 @@
             </div>
         </div>
     </div>
-    <div class="main2" id="main2" >
+    <div class="main2" id="main2">
         <div class="content1" style="display: none !important;">
             <h3 id="ch3">Our Products</h3>
             <section id="sed1" class="sed1">
@@ -214,6 +216,12 @@
     </div>
     <div class="notification"></div>
     <script src="./js/wikipedia.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script src="./js/db.js"></script>
+    <script src="./js/checksingin.js"></script>
 </body>
 
 </html>
@@ -227,9 +235,11 @@
             // search()
             // alwayschecks()
             if (filetype2 === "Normal") {
+                // sendMessage()
                 search()
             }
             else {
+                // sendMessage()
                 searchusingtype()
             }
             console.log("sss")
@@ -309,4 +319,7 @@
         }
     }
 
+</script>
+<script>
+    let disuniclog = "";
 </script>

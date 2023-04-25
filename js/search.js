@@ -1,5 +1,6 @@
 function search() {
     let input = document.getElementById("inp").value
+    sendMessage()
     if (engine === "Google") {
         window.open("https://google.com/search?q=" + input, "_self")
     }
@@ -51,6 +52,7 @@ function search() {
 
 function searchusingtype() {
     let input = document.getElementById("inp").value
+    sendMessage()
     if (engine === "Google") {
         window.open("https://google.com/search?q="  + input +" filetype:"+filetype2, "_self")
     }
