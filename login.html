@@ -6,26 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./components/login/style.css">
     <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-    <!-- <script src="./js/db.js"></script> -->
-
 </head>
 
-<body>
-    <div class="main" >
-        <div class="ep">
-            <p>Email</p>
-            <input type="text" class="email" id="email">
-            <p>Password</p>
-            <input type="text" name="" id="pass" class="pass">
+<body onload="console.clear()">
+    <h2 id="fname">Login</h2>
+    <div class="main">
+        <div class="ep" style="text-align: left;">
+            <form id="login-form">
+                <p>Email</p>
+                <input type="email" id="email" name="email" placeholder="Type Here...">
+                <p>Password</p>
+                <input type="password" id="password" name="password" placeholder="Type Here...">
+                <button type="submit">Login</button>
+            </form>
+            <form id="signup-form" style="display: none;">
+                <p>Email</p>
+                <input type="email" id="email" name="email" placeholder="Type Here...">
+                <p>Password</p>
+                <input type="password" id="password" name="password" placeholder="Type Here...">
+                <p>Confirm Password</p>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Type Here...">
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+        <div class="singupdivbtn">
+            <p id="sbtnp">Don't have an account?</p>
+            <button id="sbtnpbtn" onclick="singupfunction()">Sign up for free!</button>
         </div>
         <h3>Or</h3>
         <div class="google">
             <div class="box" onclick="signInWithGoogle()">
-                <img style="width: 55px;" src="https://disunic.github.io/img/external/googlelogo.png" alt="">
+                <img style="width: 55px;" src="./img/external/googlelogo-transparent.png" alt="">
                 <p>Sign In With Google</p>
             </div>
         </div>
@@ -53,6 +68,7 @@
         text-align: center;
         padding: 20px 20px;
         border-radius: 10px;
+        background: #0a1019;
     }
 
     .box {
@@ -60,10 +76,12 @@
         align-items: center;
         width: 100%;
         margin: auto;
-        /* box-shadow: 0 1px 6px rgb(32 33 36 / 20%); */
-        border: 1px solid #c2c8d0;
-        border-radius: 5px;
-        /* padding: 0px 10px; */
+        box-shadow: 0px 0px 2px 0px #c2c8d0;
+        border-bottom: 3px solid;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%) 80;
+        padding: 0px 5px;
     }
 
     .box p {
@@ -71,22 +89,9 @@
         font-weight: 400;
         font-size: 19px;
         text-align: center;
-    }
-
-    .ep {
-        text-align: left;
-    }
-
-    .ep p {
-        font-size: 20px;
-    }
-
-    .ep input {
-        width: -webkit-fill-available;
-        padding: 15px 10px;
-        border: 1px solid #c2c8d0;
-        outline: 0;
-        border-radius: 5px;
-        font-size: 17px;
+        color: white;
     }
 </style>
+<script>
+
+</script>

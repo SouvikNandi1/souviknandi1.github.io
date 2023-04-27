@@ -94,7 +94,7 @@ function check() {
         codepensearchforlogic()
     }
     else {
-        googlesearchforlogic()
+        disunicsearchforlogic()
     }
 }
 function check2() {

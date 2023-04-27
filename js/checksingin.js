@@ -19,10 +19,12 @@ function signInWithGoogle() {
 }
 // signInWithGoogle()
 // Get the user's data after sign in
-firebase.auth().getRedirectResult().then(function (result) {
+firebase.auth().getRedirectResult()
+// firebase.auth().signInWithPopup(provider)
+
+.then(function (result) {
     if (result.user) {
         var user = result.user;
-        // console.log("User ID:", user.email); // Log user's ID
         localStorage.setItem("singuser", user.email)
         window.open("./index.html", "_self")
     }
@@ -32,11 +34,79 @@ firebase.auth().getRedirectResult().then(function (result) {
     var errorMessage = error.message;
     console.log(errorCode, errorMessage);
 });
-function singincheck() {
-    if (localStorage.getItem("singuser") === null) {
-        window.open("./login.html", "_self")
+
+
+
+
+
+
+// Login form
+var loginForm = document.querySelector('#login-form');
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    var email = loginForm['email'].value;
+    var password = loginForm['password'].value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Signed in
+            var user = userCredential.user;
+            console.log(user.email); // Print email to console
+            localStorage.setItem("singuser", user.email)
+            window.open("./index.html", "_self")
+            // Redirect to dashboard or home page
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // Show error message to user
+        });
+
+});
+
+// Signup form
+var signupForm = document.querySelector('#signup-form');
+signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    var email = signupForm['email'].value;
+    var password = signupForm['password'].value;
+    var confirmPassword = signupForm['confirm-password'].value;
+
+    if (password !== confirmPassword) {
+        // Show error message to user
+        return;
     }
-    // else if (localStorage.setItem("singuser") ===localStorage.getItem("singuser")) {
-    //     window.open("./index.html", "_self")
-    // }
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Signed up
+            var user = userCredential.user;
+            // Redirect to dashboard or home page
+            localStorage.setItem("singuser", user.email)
+            window.open("./index.html", "_self")
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // Show error message to user
+        });
+});
+
+
+
+
+
+
+
+
+
+
+
+function singupfunction(){
+    document.getElementById("fname").innerHTML = 'Signup Now'
+    document.getElementById("login-form").style.display = "none"
+    document.getElementById("signup-form").style.display = "block"
+    document.getElementById("sbtnp").innerHTML = 'Already have an account?'
+    document.getElementById("sbtnpbtn").innerHTML = 'Log in here!'
+    document.getElementById("sbtnpbtn").setAttribute("onclick","location.reload()")
 }

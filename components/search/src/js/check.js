@@ -20,10 +20,17 @@ function checkonload2() {
             if (tab === "web") {
                 document.getElementById("sweb").style.borderBottom = "3px solid #005bff";
                 document.getElementById("simg").style.borderBottom = "none";
+                document.getElementById("svideo").style.borderBottom = "none";
             }
             else if (tab === "img") {
                 document.getElementById("simg").style.borderBottom = "3px solid #005bff";
                 document.getElementById("sweb").style.borderBottom = "none";
+                document.getElementById("svideo").style.borderBottom = "none";
+            }
+            else if (tab === "video") {
+                document.getElementById("simg").style.borderBottom = "none";
+                document.getElementById("sweb").style.borderBottom = "none";
+                document.getElementById("svideo").style.borderBottom = "3px solid #005bff";
             }
         }
         catch {
