@@ -15,38 +15,40 @@ const db6 = myApp4.database();
 const dbRef = db6.ref('news');
 const newssfg = "news";
 // db6.ref(newssfg).remove();
-$.ajax({
-  url: apiUrl,
-  method: 'GET',
-  dataType: 'json',
-  success: function (data) {
-    for (let article of data.articles) {
-      const title = article.title;
-      const url = article.url;
-      const imageUrl = article.urlToImage;
-      window.scrollTo(0, document.body.scrollHeight);
-      setTimeout(() => {
-        
-        db6.ref(newssfg).push({
-          title,
-          url,
-          imageUrl
-        });
-      }, 2000);
+function run(){
+  $.ajax({
+    url: apiUrl,
+    method: 'GET',
+    dataType: 'json',
+    success: function (data) {
+      for (let article of data.articles) {
+        const title = article.title;
+        const url = article.url;
+        const imageUrl = article.urlToImage;
+        window.scrollTo(0, document.body.scrollHeight);
+        db6.ref(newssfg).remove();
+        setTimeout(() => {
+          db6.ref(newssfg).push({
+            title,
+            url,
+            imageUrl
+          });
+        }, 2000);
+      }
+    },
+    error: function (error) {
+      console.log(error);
     }
-  },
-  error: function (error) {
-    console.log(error);
-  }
-});
+  });
+}
 // Listen for new news added to the database and log their titles and URLs
-dbRef.on('child_added', function(snapshot) {
-  const childData = snapshot.val();
-  const li = `
-        <div class="newsdiv" id="newsdiv">
-          <img src="${childData.imageUrl}" alt="" width="100">
-          <p><a id="newsa" href="${childData.url}" target="_blank">${childData.title}</a></p>
-        </div>
-      `;
-      $('#news').append(li);
-});
+// dbRef.on('child_added', function(snapshot) {
+//   const childData = snapshot.val();
+//   const li = `
+//         <div class="newsdiv" id="newsdiv">
+//           <img src="${childData.imageUrl}" alt="" width="100">
+//           <p><a id="newsa" href="${childData.url}" target="_blank">${childData.title}</a></p>
+//         </div>
+//       `;
+//       $('#news').append(li);
+// });
