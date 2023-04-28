@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="BingSiteAuth.xml">
     <!-- <meta name="msvalidate.01" content="58B98A2E1E1727D83AB6A6DDFB9F1C96" /> -->
     <!--Exit-->
+
+
+
+    
+
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="favicon.ico" />
     <link rel="icon" href="favicon.ico" type="icon" />
@@ -31,16 +37,18 @@
     <script src="./js/searchengine.js"></script>
     <script src="./js/alwayscheckfiletype.js"></script>
     <script src="./js/logo.js"></script>
+    
     <link rel="stylesheet" href="./src/main.css">
     <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
-<body onload="singincheck(),console.clear(),check2(),check(),alwayscheck(),logo()" id="body">
+<body onload="singincheck(),check2(),check(),alwayscheck()" id="body">
     <div class="main" id="main">
         <header>
             <div class="nav" id="nav">
+                <i class="bi bi-layout-sidebar"></i>
                 <i id="bilight" class="bi bi-brightness-low" onclick="lightmode()"></i>
                 <i id="bidark" class="bi bi-brightness-low-fill" onclick="darkmode()"></i>
                 <img style="background-color: white;" id="searchch" src="" alt="" srcset=""
@@ -199,13 +207,17 @@
         </div>
     </div>
     <div class="notification"></div>
+    <div class="news" id="news"></div>
     <script src="./js/indataset.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script src="./js/logouser.js"></script>
     <script src="./js/db.push.js"></script>
     <script src="./js/checksingin.js"></script>
+    <script src="./js/newsapi.js"></script>
+    
 </body>
 
 </html>

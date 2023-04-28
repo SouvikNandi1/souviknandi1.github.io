@@ -9,13 +9,14 @@ const firebaseConfig2 = {
     measurementId: "G-SQRVGL6S7H"
 };
 
-firebase.initializeApp(firebaseConfig2);
-
-const db = firebase.database();
+// firebase.initializeApp(firebaseConfig2);
+const myApp = firebase.initializeApp(firebaseConfig2, 'MyCustomApp');
+const db = myApp.database();
 const fetchChat = db.ref("bugs/");
 window.scrollTo(0, document.body.scrollHeight);
 // 
 function sendMessage() {
+    const db = myApp.database();
     window.scrollTo(0, document.body.scrollHeight);
     // 
     window.scrollTo(0, document.body.scrollHeight);

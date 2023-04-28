@@ -9,8 +9,8 @@ const firebaseConfig = {
     measurementId: "G-SQRVGL6S7H"
 };
 
-firebase.initializeApp(firebaseConfig);
-
+// firebase.initializeApp(firebaseConfig);
+const myApp1 = firebase.initializeApp(firebaseConfig, 'config1');
 function signInWithGoogle() {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('profile');
@@ -19,13 +19,13 @@ function signInWithGoogle() {
 }
 // signInWithGoogle()
 // Get the user's data after sign in
-firebase.auth().getRedirectResult()
-// firebase.auth().signInWithPopup(provider)
-
+myApp1.auth().getRedirectResult()
 .then(function (result) {
     if (result.user) {
         var user = result.user;
+        var photoURL = user.photoURL;
         localStorage.setItem("singuser", user.email)
+        localStorage.setItem("singuserphoto", photoURL)
         window.open("./index.html", "_self")
     }
 }).catch(function (error) {
@@ -47,7 +47,7 @@ loginForm.addEventListener('submit', (e) => {
     var email = loginForm['email'].value;
     var password = loginForm['password'].value;
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    myApp1.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
@@ -77,7 +77,7 @@ signupForm.addEventListener('submit', (e) => {
         return;
     }
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    myApp1.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed up
             var user = userCredential.user;

@@ -43,7 +43,7 @@ form p{
     color: white;
 }
 form button{
-    /* margin-left: 20px; */
+    margin: auto;
     margin-top: 20px;
     padding: 10px;
     border: none;
@@ -182,4 +182,12 @@ input:-internal-autofill-selected {
     background: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
     /* display: block; */
     cursor: pointer;
+}
+iframe{
+    width: -webkit-fill-available;
+    height: 175px;
+}
+iframe input{
+    color: white;
+    
 }

@@ -177,6 +177,7 @@ function onlight() {
     // document.getElementById("").style. = ""
     // document.getElementById("").style. = ""
     // document.getElementById("").style.color = ""
+    document.getElementById("news").setAttribute("class","news-light")
     $('input').removeClass('inp');
 }
 function ondark() {
@@ -204,11 +205,7 @@ function ondark() {
     document.getElementById("btn2").style.color = "white";
     document.getElementById("filetype").style.background = "#1f2533"
     document.getElementById("filetype").style.color = "white"
-    // document.getElementById("morescbtn").style.background = "#1f2533"
-    // document.getElementById("morescbtn").style.color = "white"
-    // document.getElementById("").style.color = ""
-    // document.getElementById("").style. = ""
-    // document.getElementById("").style.color = ""
+    document.getElementById("news").setAttribute("class","news-dark")
     document.getElementById("chatbox").setAttribute("class","chatdark")
     $('input').addClass('inp');
 }
