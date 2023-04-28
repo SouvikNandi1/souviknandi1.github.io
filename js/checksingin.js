@@ -15,7 +15,7 @@ function signInWithGoogle() {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('profile');
     provider.addScope('email');
-    firebase.auth().signInWithRedirect(provider);
+    myApp1.auth().signInWithRedirect(provider);
 }
 // signInWithGoogle()
 // Get the user's data after sign in
