@@ -18,20 +18,18 @@
         <div class="ep" style="text-align: left;">
             <form id="login-form">
                 <p>Email</p>
-                <input type="email" id="email" name="email" placeholder="Type Here...">
+                <input type="email" id="email" name="email" placeholder="Type Here..." required>
                 <p>Password</p>
-                <input type="password" id="password" name="password" placeholder="Type Here...">
+                <input type="password" id="password" name="password" placeholder="Type Here..." required>
                 <button type="submit">Login</button>
             </form>
             <form id="signup-form" style="display: none;">
                 <p>Email</p>
-                <input type="email" id="email" name="email" placeholder="Type Here...">
+                <input type="email" id="email" name="email" placeholder="Type Here..." required>
                 <p>Password</p>
-                <input type="password" id="password" name="password" placeholder="Type Here...">
+                <input type="password" id="password" name="password" placeholder="Type Here..." required>
                 <p>Confirm Password</p>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Type Here...">
-                <p>Upload A Profile Picture</p>
-                <iframe src="http://127.0.0.1:5501/index4.html" frameborder="0"></iframe>
+                <input type="password" id="confirm-password" required name="confirm-password" placeholder="Type Here...">
                 <button type="submit">Signup</button>
             </form>
         </div>
@@ -52,7 +50,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
     <script src="./js/checksingin.js"></script>
-    <script src="./js/db.js"></script>
+    <!-- <script src="./js/db.js"></script> -->
 </body>
 
 </html>

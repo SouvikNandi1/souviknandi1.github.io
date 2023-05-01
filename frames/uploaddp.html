@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/components/login/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <p>First Name</p>
+        <input type="text" id="first-name" required>
+        <p>Last Name</p>
+        <input type="text" name="" id="last-name" required>
+        <p>Upload A Photo</p>
+        <input type="file" id="fileInput" required>
+        <div id="output"></div>
+        <button id="finishbtn">Finish</button>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
+    <script src="/js/logouser.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBAxtR9C4RFn6zhOAJi2S9e6f3p1jjpT1Y",
+            authDomain: "disunic-f3e5a.firebaseapp.com",
+            databaseURL: "https://disunic-f3e5a-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "disunic-f3e5a",
+            storageBucket: "disunic-f3e5a.appspot.com",
+            messagingSenderId: "552563434858",
+            appId: "1:552563434858:web:c1d6aed31d2fbef0c3b113",
+            measurementId: "G-SQRVGL6S7H"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const database = firebase.database();
+        const storage = firebase.storage();
+
+        const fileInput = document.getElementById('fileInput');
+        const output = document.getElementById('output');
+
+        fileInput.addEventListener('change', handleFileSelect, false);
+
+        function handleFileSelect(evt) {
+            const file = evt.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const base64String = event.target.result.split(',')[1];
+                uploadImageToFirebase(base64String);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function uploadImageToFirebase(base64String) {
+            const imagesRef = database.ref('images/').push();
+            const fileName = `${Date.now()}.jpg`;
+            const storageRef = storage.ref().child(fileName);
+            const uploadTask = storageRef.putString(base64String, 'base64');
+
+            uploadTask.on('state_changed', (snapshot) => {
+                // Show the upload progress to the user
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                output.innerHTML = `Uploading... ${progress.toFixed(2)}%`;
+            }, (error) => {
+                // Handle errors during the upload
+                console.error(error);
+                output.innerHTML = `Error: ${error.message}`;
+            }, () => {
+                // Get the download URL of the uploaded image
+                uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                    // Save the download URL to the database
+                    imagesRef.set({
+                        image: downloadURL
+                    }).then(() => {
+                        // Show the download URL to the user
+                        // output.innerHTML = `Download URL: <a href="${downloadURL}" target="_blank">${downloadURL}</a>`;
+                        output.innerHTML = `<img src="${downloadURL}"></img>`
+                        localStorage.setItem("userlogo", downloadURL)
+                        uploaduserlogo();
+                        getlogofromdb()
+                        document.getElementById("finishbtn").setAttribute("onclick", "finishsingupprosses()")
+                    }).catch((error) => {
+                        // Handle errors during the database write
+                        console.error(error);
+                        output.innerHTML = `Error: ${error.message}`;
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+<script>
+    function finishsingupprosses() {
+        if (document.getElementById("first-name") & document.getElementById("last-name") === "") {
+            console.log("error")
+        }
+        else{
+            window.open("/index.html","_self")
+        }
+    }
+</script>
+
+</html>
+<style>
+    input {
+        color: white;
+        font-size: 15px;
+    }
+
+    #output {
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #output img {
+        width: 100px;
+        border-radius: 10px;
+    }
+
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 600;
+        margin: 0px;
+    }
+
+    .main {
+        width: 85%;
+        margin: auto;
+        box-shadow: 0 1px 6px rgba(255, 255, 255, 0.2);
+        margin-top: 20px;
+        text-align: center;
+        padding: 20px 20px;
+        border-radius: 10px;
+        background: #0a1019;
+    }
+
+    .main p {
+        text-align: left;
+        color: white;
+        font-size: 20px;
+    }
+
+    #fileInput {
+        border-bottom: 0px solid;
+    }
+</style>

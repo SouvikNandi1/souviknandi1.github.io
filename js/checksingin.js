@@ -20,25 +20,21 @@ function signInWithGoogle() {
 // signInWithGoogle()
 // Get the user's data after sign in
 myApp1.auth().getRedirectResult()
-.then(function (result) {
-    if (result.user) {
-        var user = result.user;
-        var photoURL = user.photoURL;
-        localStorage.setItem("singuser", user.email)
-        localStorage.setItem("singuserphoto", photoURL)
-        window.open("./index.html", "_self")
-    }
-}).catch(function (error) {
-    // Handle errors here
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode, errorMessage);
-});
-
-
-
-
-
+    .then(function (result) {
+        if (result.user) {
+            var user = result.user;
+            var photoURL = user.photoURL;
+            localStorage.setItem("singuser", user.email)
+            localStorage.setItem("userlogo", photoURL)
+            localStorage.setItem("disunicloginmode", "Google")
+            window.open("./index.html", "_self")
+        }
+    }).catch(function (error) {
+        // Handle errors here
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+    });
 
 // Login form
 var loginForm = document.querySelector('#login-form');
@@ -52,6 +48,7 @@ loginForm.addEventListener('submit', (e) => {
             // Signed in
             var user = userCredential.user;
             console.log(user.email); // Print email to console
+            localStorage.setItem("disunicloginmode", "Disunic")
             localStorage.setItem("singuser", user.email)
             window.open("./index.html", "_self")
             // Redirect to dashboard or home page
@@ -82,8 +79,9 @@ signupForm.addEventListener('submit', (e) => {
             // Signed up
             var user = userCredential.user;
             // Redirect to dashboard or home page
+            localStorage.setItem("disunicloginmode", "Disunic")
             localStorage.setItem("singuser", user.email)
-            window.open("./index.html", "_self")
+            window.open("./frames/uploaddp.html", "_self")
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -102,11 +100,11 @@ signupForm.addEventListener('submit', (e) => {
 
 
 
-function singupfunction(){
+function singupfunction() {
     document.getElementById("fname").innerHTML = 'Signup Now'
     document.getElementById("login-form").style.display = "none"
     document.getElementById("signup-form").style.display = "block"
     document.getElementById("sbtnp").innerHTML = 'Already have an account?'
     document.getElementById("sbtnpbtn").innerHTML = 'Log in here!'
-    document.getElementById("sbtnpbtn").setAttribute("onclick","location.reload()")
+    document.getElementById("sbtnpbtn").setAttribute("onclick", "location.reload()")
 }

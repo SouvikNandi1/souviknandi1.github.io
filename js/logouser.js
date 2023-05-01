@@ -10,24 +10,36 @@ const firebaseConfig3 = {
 };
 // firebase.initializeApp(firebaseConfig3);
 const myApp2 = firebase.initializeApp(firebaseConfig3, 'MyAppName2');
-const database = myApp2.database();
+const databaselogo = myApp2.database();
 function uploaduserlogo() {
     window.scrollTo(0, document.body.scrollHeight);
     window.scrollTo(0, document.body.scrollHeight);
-    let logo = "nuyy"
-    console.log(localStorage.getItem("singuser"))
+    let fname = document.getElementById("first-name").value
+    let lname = document.getElementById("last-name").value
+    let logo = localStorage.getItem("userlogo")
     const newStr = localStorage.getItem("singuser").replace(/\./g, "@disunic");
-    database.ref(newStr).set({
+    databaselogo.ref(newStr).set({
+        fname,
+        lname,
         logo,
     });
 }
-const newStr = localStorage.getItem("singuser").replace(/\./g, "@disunic");
-const userRef = database.ref(newStr);
-userRef.once("value", function(snapshot) {
-  const userData = snapshot.val();
-  const logoUrl = userData.logo;
-//   console.log(logoUrl);
-});
-
-
-
+function getlogofromdb() {
+    if (localStorage.getItem("disunicloginmode") === "Disunic") {
+        const newStr = localStorage.getItem("singuser").replace(/\./g, "@disunic");
+        const userRef = databaselogo.ref(newStr);
+        userRef.once("value", function (snapshot) {
+            const userData = snapshot.val();
+            const logoUrl = userData.logo;
+            const username = userData.fname;
+            localStorage.setItem("username", username)
+            const lastname = userData.lname;
+            localStorage.setItem("lastname", lastname)
+            // console.log(logoUrl + username + lastname);
+            document.getElementById("disunicuser").src = logoUrl
+        });
+    }
+    else if(localStorage.getItem("disunicloginmode") === "Google"){
+        document.getElementById("disunicuser").src = localStorage.getItem("userlogo")
+    }
+}
