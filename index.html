@@ -31,8 +31,21 @@
     <script src="./js/searchengine.js"></script>
     <script src="./js/alwayscheckfiletype.js"></script>
     <script src="./js/logo.js"></script>
+
+    <script src="./js/app/check1.js"></script>
+    <script src="./js/app/check2.js"></script>
+    <script src="./js/app/inputs.js"></script>
+
     
+
+
+
+
+
+
+
     <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/dark.css">
     <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -42,7 +55,9 @@
     <div class="main" id="main">
         <header>
             <div class="nav" id="nav">
-                <i class="bi bi-layout-sidebar"></i>
+                <i onclick="changesearchengine()"
+                    style="font-size: 30px;margin-left: 10px;cursor: pointer;color: #167df1;" class="bi bi-amd"
+                    id="sidebar"></i>
                 <i id="bilight" class="bi bi-brightness-low" onclick="lightmode()"></i>
                 <i id="bidark" class="bi bi-brightness-low-fill" onclick="darkmode()"></i>
                 <img style="background-color: white;display: none;" id="searchch" src="" alt="" srcset=""
@@ -213,7 +228,7 @@
     <script src="./js/checksingin.js"></script>
     <script src="./js/newsapi.js"></script>
     <script src="./js/getnews.js"></script>
-    
+
 </body>
 
 </html>
@@ -322,4 +337,5 @@
         //     window.open("./index.html", "_self")
         // }
     }
+
 </script>

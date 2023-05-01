@@ -3,7 +3,7 @@ function checkonload() {
     if (mode === "dark") {
         document.getElementById("body").setAttribute("class", "dark")
     }
-    else if (mode === "light") {
+    else if (mode === "") {
         document.getElementById("body").setAttribute("class", "light")
     }
     else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
