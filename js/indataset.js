@@ -99,7 +99,6 @@ function button() {
                                 function typeWriter() {
                                     if (i < opoo.length) {
                                         timer()
-                                        document.getElementById("disunicuserlogo").src = localStorage.getItem("infologo")
                                         setTimeout(() => {
                                             // timer()
                                             myDiv.innerHTML += opoo.charAt(i);
