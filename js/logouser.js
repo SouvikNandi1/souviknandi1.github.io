@@ -36,7 +36,9 @@ function getlogofromdb() {
             const lastname = userData.lname;
             localStorage.setItem("lastname", lastname)
             // console.log(logoUrl + username + lastname);
+            localStorage.setItem("infologo",logoUrl)
             document.getElementById("disunicuser").src = logoUrl
+            
         });
     }
     else if(localStorage.getItem("disunicloginmode") === "Google"){

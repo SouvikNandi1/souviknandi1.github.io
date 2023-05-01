@@ -179,9 +179,11 @@ section {
 .inp::placeholder {
     color: white;
 }
+
 ::placeholder {
     color: rgb(0, 0, 0);
 }
+
 .searchbar button {
     outline: 0;
     border: 0px;
@@ -305,7 +307,7 @@ section {
     width: 100%;
     justify-content: center;
     height: 15%;
-    /* box-shadow: 0 1px 6px rgb(32 33 36 / 28%); */
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
     /* background: white; */
 }
 
@@ -354,11 +356,14 @@ section {
     align-items: center;
     animation: popup 100ms;
 }
-
+.user img{
+    width: 50px;
+    border-radius: 10px;
+}
 .bot {
     padding: 20px 15px 20px 15px;
     /* background: white; */
-    text-align: center;
+    text-align: left;
     width: 85%;
     margin: auto;
     margin-top: 15px;
@@ -367,9 +372,9 @@ section {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 30px;
-    /* color: #000000; */
+    color: #000000;
     animation: popup 200ms;
-    /* box-shadow: 0 1px 6px rgb(32 33 36 / 28%); */
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
 }
 
 @keyframes popup {
@@ -548,8 +553,8 @@ section {
     color: white;
 }
 
-#news{
-    
+#news {
+
     margin-top: 40px;
 }
 
@@ -563,17 +568,20 @@ section {
     /* box-shadow: 0 1px 6px 0 rgba(255, 255, 255, 0.28); */
     border-radius: 10px;
 }
-.news .newsdiv img{
+
+.news .newsdiv img {
     width: -webkit-fill-available;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
-.news .newsdiv p{
+
+.news .newsdiv p {
     padding: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
-.news .newsdiv a{
+
+.news .newsdiv a {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -581,6 +589,7 @@ section {
     font-weight: 600;
     transition: 800ms;
 }
-.news .newsdiv a:hover{
+
+.news .newsdiv a:hover {
     color: #006aff;
 }

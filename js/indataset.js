@@ -5,7 +5,18 @@ function button() {
         timer()
 
         var userInput = $("#chatinput").val();
-        $("#chatlog").append("<div class='user' id='user'><i id='userlogo' style='font-size:30px' class='bi bi-person'></i><p id='userinp' style='margin-left:10px'>" + userInput + "</p></div>");
+
+        $("#chatlog").append("<div class='user' id='user'><img id='disunicuserlogo' style='font-size:30px'></img><p id='userinp' style='margin-left:10px'>" + userInput + "</p></div>");
+
+        const rtyu = document.querySelectorAll("#disunicuserlogo")
+
+        const rytu = localStorage.getItem("infologo")
+
+
+        rtyu.forEach((img) => {
+            img.src = rytu;
+        });
+
         $("#chatinput").val("");
 
         // Loop through responses to find a match
@@ -64,6 +75,7 @@ function button() {
                                 // $("#chatlog").append("<div class='bot'><img src=" + pages[property].thumbnail.source +"></div>");
                                 articlesMarkup += '<p>' + pages[property].extract + '</p></div></div></a>';
                                 var opoo = pages[property].extract;
+
                                 $("#chatlog").append("<div class='bot'><img src=" + pages[property].thumbnail.source + "><p id='div_'></div>");
                             }
                             else {
@@ -86,15 +98,15 @@ function button() {
                                 typeWriter()
                                 function typeWriter() {
                                     if (i < opoo.length) {
-                                        // timer()
-
+                                        timer()
+                                        document.getElementById("disunicuserlogo").src = localStorage.getItem("infologo")
                                         setTimeout(() => {
                                             // timer()
                                             myDiv.innerHTML += opoo.charAt(i);
                                             i++;
                                             // timer()
                                         }, 3000);
-                                        // timer()
+                                        timer()
                                         setTimeout(typeWriter, speed);
 
                                     }
@@ -119,6 +131,6 @@ function timer() {
     setTimeout(() => {
         El.scrollTo({ top: 0, behavior: 'smooth' });
         El.scrollTo({ top: El.scrollHeight, behavior: 'smooth' });
-    }, 1000);
+    }, 100);
 
 }
