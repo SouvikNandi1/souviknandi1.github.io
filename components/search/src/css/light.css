@@ -1,9 +1,10 @@
-.light{
+.light {
     background: #f1f3f4;
     margin: 0px;
     display: block;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
+
 /* Result Container */
 .light .gsc-control-wrapper-cse {
     background: #f1f3f4 !important;
@@ -53,8 +54,13 @@
 /* Result Container Under*/
 .light .gs-title {
     font-size: 20px !important;
+    display: flex !important;
+    /* display: flex; */
+    align-items: center !important;
 }
-
+.light a.gs-title {
+    display: block !important;
+}
 .light .gs-title a {
     color: #0051ff !important;
 }
@@ -196,6 +202,7 @@
     padding-left: 10px;
     color: rgb(0, 0, 0);
 }
+
 /*  */
 
 /* Promotion */
@@ -220,20 +227,23 @@
 .light #wikidisunic {
     padding: 0px !important;
 }
-.light #wikidisunic img{
+
+.light #wikidisunic img {
     width: -webkit-fill-available;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     border-bottom: 1px solid gray;
 }
-.light #wikidisunic p{
+
+.light #wikidisunic p {
     font-size: 15px !important;
     font-weight: 500;
     margin-top: 8px;
     padding: 15px 8px !important;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.light #wikidisunic a{
+
+.light #wikidisunic a {
     color: #000000;
     padding: 10px 25px;
     background: transparent;
@@ -250,4 +260,37 @@
     border-radius: 8px;
     font-weight: 600;
 }
+
 /*  */
+
+.light img.gs-image {
+
+
+    /* border: none !important; */
+    /* box-shadow: 0 1px 6px rgb(221 207 207 / 98%); */
+    width: 35px !important;
+    height: 35px !important;
+    object-fit: contain !important;
+    border-radius: 30px;
+    background: white;
+    margin-right: 10px;
+    border: 1px solid #c5c5c582;
+    padding: 2px;
+    float: left;
+
+}
+
+.light img#auimg {
+
+    /* border: none !important; */
+    /* box-shadow: 0 1px 6px rgb(221 207 207 / 98%); */
+    width: 35px !important;
+    height: 35px !important;
+    object-fit: contain !important;
+    border-radius: 30px;
+    background: white;
+    margin-right: 10px;
+    border: 1px solid #c5c5c582;
+    padding: 2px;
+    float: left;
+}

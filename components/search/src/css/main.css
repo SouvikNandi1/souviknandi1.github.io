@@ -254,3 +254,12 @@ a.gs-image {
     background-color: #FFFFFF;
     width: 90% !important;
 } */
+.gs-title.gsc-table-cell-thumbnail.gsc-thumbnail-left {
+    display: none !important;
+}
+
+
+
+.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title *{
+    display: inline;
+}

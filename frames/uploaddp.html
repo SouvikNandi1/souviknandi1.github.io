@@ -9,9 +9,9 @@
 <body>
     <div class="main">
         <p>First Name</p>
-        <input type="text" id="first-name" required>
+        <input type="text" id="first-name" placeholder="Type Here..." required>
         <p>Last Name</p>
-        <input type="text" name="" id="last-name" required>
+        <input type="text" name="" id="last-name" placeholder="Type Here..." required>
         <p>Upload A Photo</p>
         <input type="file" id="fileInput" required>
         <div id="output"></div>
@@ -96,8 +96,8 @@
         if (document.getElementById("first-name") & document.getElementById("last-name") === "") {
             console.log("error")
         }
-        else{
-            window.open("/index.html","_self")
+        else {
+            window.open("/index.html", "_self")
         }
     }
 </script>
@@ -143,7 +143,94 @@
         font-size: 20px;
     }
 
+    #finishbtn {
+        margin: auto;
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        font-weight: 600;
+        box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+        border-radius: 5px;
+        font-size: 17px;
+        color: white;
+        background: #1472ff;
+        display: block;
+        cursor: pointer;
+    }
+
     #fileInput {
         border-bottom: 0px solid;
+    }
+
+    @media (min-width: 500px) {
+        .main {
+            width: 80% !important;
+        }
+    }
+
+    @media (min-width: 600px) {
+        .main {
+            width: 70% !important;
+        }
+    }
+
+    @media (min-width: 700px) {
+        .main {
+            width: 50% !important;
+        }
+    }
+
+    @media (min-width: 800px) {
+        .main {
+            width: 50% !important;
+        }
+    }
+
+    @media (min-width: 900px) {
+        .main {
+            width: 40% !important;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .main {
+            width: 40% !important;
+        }
+    }
+
+    @media (min-width: 1100px) {
+        .main {
+            width: 40% !important;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .main {
+            width: 40% !important;
+        }
+    }
+
+    @media (min-width: 1300px) {
+        .main {
+            width: 40% !important;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .main {
+            width: 40% !important;
+        }
+    }
+
+    @media (min-width: 1500px) {
+        .main {
+            width: 40% !important;
+        }
+    }
+
+    @media (min-width: 1600px) {
+        .main {
+            width: 40% !important;
+        }
     }
 </style>

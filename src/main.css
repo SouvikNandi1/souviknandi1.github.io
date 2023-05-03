@@ -105,7 +105,7 @@ section {
 
     100% {
         margin-top: 0px;
-        width: 100%;
+        width: 100;
     }
 }
 
@@ -268,9 +268,9 @@ section {
 #sugen {
     display: block;
     margin: auto;
-    padding: 0px 20px;
-    height: 400px;
-    overflow-y: scroll;
+    /* padding: 0px 20px; */
+    /* height: 400px; */
+    /* overflow-y: scroll; */
 
 }
 
@@ -278,14 +278,14 @@ section {
     margin-top: 0px;
     margin-bottom: 0px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(50deg, #aeff00 0%, #006aff 74%) 80;
+    border-image: linear-gradient(50deg, #00f4ff 0%, #007eff 74%) 80;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     cursor: pointer;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #chatlog {
@@ -554,7 +554,7 @@ section {
 }
 
 #news {
-
+    text-align: center;
     margin-top: 40px;
 }
 
@@ -562,11 +562,12 @@ section {
 .news .newsdiv {
     margin: auto;
     /* border: 1px solid; */
-    width: 85%;
-    margin-bottom: 20px;
+    width: 300px;
+    margin-bottom: 30px;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.28);
-    /* box-shadow: 0 1px 6px 0 rgba(255, 255, 255, 0.28); */
     border-radius: 10px;
+    display: inline-block;
+
 }
 
 .news .newsdiv img {
@@ -579,6 +580,7 @@ section {
     padding: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
+    text-align: left;
 }
 
 .news .newsdiv a {
