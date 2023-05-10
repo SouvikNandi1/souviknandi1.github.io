@@ -1,132 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Scientist's Club - Disunic</title>
-    <link rel="stylesheet" href="./index.css" />
-  </head>
-  <body>
-    <header>
-      <h2 style="width: 100%; margin-left: 10px; color: #0b62ff;">Let's Chat Together</h2>
-      <h2 style="align-items: end;margin-right: 10px;color: #565656;">From_Disunic</h2>
-    </header>
-    <div id="chat">
-      <div id="messages">
-        
-      </div>
 
-      <form id="message-form">
-        <input id="message-input" type="text" placeholder="Type Your Message....." autocomplete="off"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scientist's Club - Disunic</title>
+  <link rel="stylesheet" href="./components/chat-disunic/css/style.css" />
+</head>
+
+<body>
+  <header>
+
+  </header>
+  <div id="chat">
+    <div id="messages"></div>
+    <form id="message-form">
+      <div class="bar">
+        <input id="message-input" type="text" placeholder="Type Your Message....." autocomplete="off" />
         <button id="message-btn" onclick="window.scrollTo(0,document.body.scrollHeight)" type="submit">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            fill="blue"
-            class="bi bi-send"
-            viewBox="0 0 16 16"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="blue" class="bi bi-send"
+            viewBox="0 0 16 16">
             <path
-              d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
-            />
+              d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
           </svg>
         </button>
-      </form>
-    </div>
+      </div>
+    </form>
+  </div>
 
-    <!-- scripts -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script src="index.js"></script>
-    <script>
-      function inpscr(){
-        window.scrollTo(0,document.body.scrollHeight);
-      }
-    </script>
-  </body>
+  <!-- scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <script src="index.js"></script>
+  <script>
+    function inpscr() {
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  </script>
+</body>
+
 </html>
 <script>
-    // Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyBAxtR9C4RFn6zhOAJi2S9e6f3p1jjpT1Y",
-    authDomain: "disunic-f3e5a.firebaseapp.com",
-    databaseURL: "https://disunic-f3e5a-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "disunic-f3e5a",
-    storageBucket: "disunic-f3e5a.appspot.com",
-    messagingSenderId: "552563434858",
-    appId: "1:552563434858:web:c1d6aed31d2fbef0c3b113",
-    measurementId: "G-SQRVGL6S7H"
-};
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD-7gIPGnS_TsoLDlALUKWYz31jU_f0BfE",
+    authDomain: "disunic-chat.firebaseapp.com",
+    databaseURL: "https://disunic-chat-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "disunic-chat",
+    storageBucket: "disunic-chat.appspot.com",
+    messagingSenderId: "295058546824",
+    appId: "1:295058546824:web:35e92bae7e7bb1c4737f3d",
+    measurementId: "G-HXHJZZH87K"
+  };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
-const fetchChat = db.ref("messages/");
-// const username = prompt("Please Tell Us Your Name");
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+  const fetchChat = db.ref("messages/");
+  // const username = prompt("Please Tell Us Your Name");
 
-let username = getCookie("username");
-if (username != "") {
-  alert("Welcome Back " + username);
-} else {
-  username = prompt("Please Enter Your Name:", "");
-  if (username != "" && username != null) {
-    setCookie("username", username, 30);
-  }
-}
+  let username = localStorage.getItem("username")
+  let userid = localStorage.getItem("singuser")
 
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == " ") {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-window.scrollTo(0, document.body.scrollHeight);
-document.getElementById("message-form").addEventListener("submit", sendMessage);
-
-function sendMessage(e) {
   window.scrollTo(0, document.body.scrollHeight);
-  e.preventDefault();
-  window.scrollTo(0, document.body.scrollHeight);
-  const timestamp = Date.now();
-  const messageInput = document.getElementById("message-input");
-  const message = messageInput.value;
-  messageInput.value = "";
-  document
-    .getElementById("messages")
-    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+  document.getElementById("message-form").addEventListener("submit", sendMessage);
 
-  // create db collection and send in the data
-  db.ref("messages/" + timestamp).set({
-    username,
-    message,
+  function sendMessage(e) {
+    window.scrollTo(0, document.body.scrollHeight);
+    e.preventDefault();
+    window.scrollTo(0, document.body.scrollHeight);
+    const timestamp = Date.now();
+    const messageInput = document.getElementById("message-input");
+    const message = messageInput.value;
+    messageInput.value = "";
+    document
+      .getElementById("messages")
+      .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+    // create db collection and send in the data
+    db.ref("messages/" + timestamp).set({
+      username,
+      userid,
+      message,
+    });
+  }
+
+  fetchChat.on("child_added", function (snapshot) {
+    const messages = snapshot.val();
+    const message = `<div class="mklf">
+                        <a class=${userid === messages.userid ? "sent" : "receive"}>
+                          <p class="username">${messages.username}</p>
+                          <p class="mass">${messages.message}</p>
+                          </a>
+                        </div>`;
+    document.getElementById("messages").innerHTML += message;
+    console.log(messages.username);
+    document.getElementById("messages").scrollIntoView();
+    window.scrollTo(0, document.body.scrollHeight);
   });
-}
-
-fetchChat.on("child_added", function (snapshot) {
-  const messages = snapshot.val();
-  const message = `<p class=${
-    username === messages.username ? "sent" : "receive"
-  }><span>${messages.username}: </span>${messages.message}</p>`;
-  document.getElementById("messages").innerHTML += message;
-  console.log(messages.username);
-  document.getElementById("messages").scrollIntoView();
-  window.scrollTo(0, document.body.scrollHeight);
-});
 </script>
