@@ -1,6 +1,30 @@
-body{
+body {
     display: none;
 }
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    scroll-behavior: smooth;
+    background: rgba(62, 62, 51, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: gray;
+}
+
+.gsc-above-wrapper-area {
+    width: 90% !important;
+    margin: auto;
+    font-size: 16px !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.gsc-above-wrapper-area .gsc-result-info {
+    font-size: 16px !important;
+}
+
 /* Result Container Under*/
 /* .gs-title {
     font-size: 20px !important;
@@ -260,6 +284,33 @@ a.gs-image {
 
 
 
-.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title *{
+.gsc-control-cse .gs-spelling,
+.gsc-control-cse .gs-result .gs-title,
+.gsc-control-cse .gs-result .gs-title * {
     display: inline;
+}
+
+.desk div#wikidisunic {
+    float: right;
+    position: absolute;
+    right: 10px;
+    width: 45% !important;
+    top: 7px;
+}
+
+.desk .gsc-expansionArea .gsc-webResult.gsc-result {
+    width: 50% !important;
+    margin: inherit !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.desk form.gsc-search-box.gsc-search-box-tools table.gsc-search-box {
+    margin: unset !important;
+    margin-top: 20px !important;
+    width: 50% !important;
+    margin-left: 60px !important;
+}
+
+@media (min-width: 400px) {
+
 }
