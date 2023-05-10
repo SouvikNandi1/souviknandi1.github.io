@@ -51,8 +51,9 @@ function wiki() {
                 var resultHtml = "";
                 $.each(pages, function (id, page) {
                     resultHtml += "<img src='" + page.thumbnail.source + "' alt='" + page.title + "'>";
-                    resultHtml += "<p>" + page.extract + "</p>";
+                    resultHtml += "<p id='wikitext'>" + page.extract + "</p>";
                     resultHtml += "<a href='https://en.wikipedia.org/?curid=" + page.pageid + "' target='_blank'>Read more</a>";
+                    resultHtml += "<a style='float: left;margin-left: 15px; ' onclick='wikilisten()'>Listen</a>"
                 });
                 console.clear()
                 logo()
@@ -67,4 +68,20 @@ function wiki() {
 }
 function wikiaddsenginedisunic() {
     $(".gsc-webResult").eq(1).after("<div class='gsc-webResult gsc-result' id='wikidisunic'></div>");
+}
+
+function wikilisten() {
+    const utterance = new SpeechSynthesisUtterance();
+
+    // Set the text you want to convert to speech
+    utterance.text = document.querySelector("#wikitext").textContent;
+
+    // Speak the text using the SpeechSynthesis API
+    const voices = speechSynthesis.getVoices();
+
+    // Set the voice you want to use for text-to-speech
+    utterance.voice = voices.find(voice => voice.name === "Microsoft David - English (United States)");
+
+    // Speak the text using the SpeechSynthesis API
+    speechSynthesis.speak(utterance);
 }
