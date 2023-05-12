@@ -1,0 +1,33 @@
+{
+    "host":"Disunic LLC",
+    "status": "OK",
+    "totalresult": "♾",
+    "api": [
+      {
+        "title": "Photoshop Express",
+        "img": "/premiumstore/imgs/android/photoshopexpress.png",
+        "url": "/premiumstore/android/photoshopexpress.html"
+      },
+      {
+        "title": "Lightroom",
+        "img": "/premiumstore/imgs/android/lightroom.png",
+        "url": "/premiumstore/android/lightroom.html"
+      },
+      {
+        "title": "Picsart",
+        "img": "/premiumstore/imgs/android/picsart.jpg",
+        "url": "/premiumstore/android/picsart.html"
+      },
+      {
+        "title": "Adobe Express",
+        "img": "/premiumstore/imgs/android/adobeexpress.jpg",
+        "url": "/premiumstore/android/adobeexpress.html"
+      }
+      ,
+      {
+        "title": "Vsco",
+        "img": "/premiumstore/imgs/android/vsco.png",
+        "url": "/premiumstore/android/vsco.html"
+      }
+    ]
+  }

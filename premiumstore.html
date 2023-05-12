@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Store - Disunic</title>
+    <link rel="stylesheet" href="./premiumstore/css/main.css">
+    <link rel="stylesheet" href="./premiumstore/css/light.css">
+    <link rel="stylesheet" href="./premiumstore/css/dark.css">
+    <script src="./premiumstore/js/style.js"></script>
+    <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body onload="themecheck()" class="" id="body">
+    <header>
+        <div class="nav" id="nav">
+            <i style="margin-left: 10px;font-size:24px;cursor: pointer;" id="bimore" class="bi bi-columns-gap"></i>
+            <i id="bilight" class="bi bi-brightness-low" onclick="lightmode()"></i>
+            <i id="bidark" class="bi bi-brightness-low-fill" onclick="darkmode()"></i>
+            <select name="" id="" style="margin-right: 10px;float: right; position: absolute; right: 10px;">
+                <option value="android">Android</option>
+                <option value="windows">Windows</option>
+            </select>
+        </div>
+    </header>
+    <div class="main" style="margin-top: 100px;">
+        <div class="android">
+            <h2 class="h2-main" id="h2-main">Android Premium Store</h2>
+            <div class="top">
+                <h2 class="h2-main" id="h2-top">Top Apps</h2>
+                <a href="./premiumstore/android/truecaller.html">
+                    <div class="apps">
+                        <img src="./premiumstore/imgs/android/truecaller.png" alt="">
+                        <p>Truecaller</p>
+                    </div>
+                </a>
+                <a href="./premiumstore/android/spotify.html">
+                    <div class="apps">
+                        <img src="./premiumstore/imgs/android/spotify.png" alt="">
+                        <p>Spotify</p>
+                    </div>
+                </a>
+                <a href="./premiumstore/android/tiktok.html">
+                    <div class="apps">
+                        <img src="./premiumstore/imgs/android/tiktok.png" alt="">
+                        <p>TikTok</p>
+                    </div>
+                </a>
+                <a href="./premiumstore/android/filmora.html">
+                    <div class="apps">
+                        <img src="./premiumstore/imgs/android/filmora.png" alt="">
+                        <p>Filmora</p>
+                    </div>
+                </a>
+            </div>
+            <div class="bottom">
+                <!-- Video Editors -->
+                <h2 class="h2-bottom" id="h2-bottom">Video Editor's</h2>
+                <div class="content" class="video-editors" id="video-editors"></div>
+                <!-- Image Editor's -->
+                <h2 class="h2-bottom" id="h2-bottom">Image Editor's</h2>
+                <div class="content" id="image-editors" class="image-editors"></div>
+            </div>
+            <div class="end"></div>
+            <div class="about" id="about"></div>
+        </div>
+        <div class="windows"></div>
+    </div>
+    <script src="./premiumstore/api/apis/android/videoeditorforandroid.js"></script>
+    <script src="./premiumstore/api/apis/android/imageeditor.js"></script>
+</body>
+
+</html>
+
+<script>
+
+</script>

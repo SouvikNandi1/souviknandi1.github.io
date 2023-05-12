@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Disunic Discussion | Disunic</title>
+  <link rel="stylesheet" href="./components/chat-disunic/css/style.css" />
+</head>
+
+<body>
+  <header>
+
+  </header>
+  <div id="chat">
+    <div id="messages"></div>
+    <form id="message-form">
+      <div class="bar">
+        <input onkeyup="checkinp()" id="message-input" type="text" placeholder="Type Your Message....." autocomplete="off" />
+        <button disabled id="message-btn" onclick="window.scrollTo(0,document.body.scrollHeight),checkinp()" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="blue" class="bi bi-send"
+            viewBox="0 0 16 16">
+            <path
+              d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <script src="index.js"></script>
+  <script>
+    function inpscr() {
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  </script>
+</body>
+
+</html>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD-7gIPGnS_TsoLDlALUKWYz31jU_f0BfE",
+    authDomain: "disunic-chat.firebaseapp.com",
+    databaseURL: "https://disunic-chat-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "disunic-chat",
+    storageBucket: "disunic-chat.appspot.com",
+    messagingSenderId: "295058546824",
+    appId: "1:295058546824:web:35e92bae7e7bb1c4737f3d",
+    measurementId: "G-HXHJZZH87K"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+  const fetchChat = db.ref("messages/");
+  // const username = prompt("Please Tell Us Your Name");
+
+  let username = localStorage.getItem("username")
+  let userid = localStorage.getItem("singuser")
+
+  window.scrollTo(0, document.body.scrollHeight);
+  document.getElementById("message-form").addEventListener("submit", sendMessage);
+
+  function sendMessage(e) {
+    window.scrollTo(0, document.body.scrollHeight);
+    e.preventDefault();
+    window.scrollTo(0, document.body.scrollHeight);
+    const timestamp = Date.now();
+    const messageInput = document.getElementById("message-input");
+    const message = messageInput.value;
+    messageInput.value = "";
+    document
+      .getElementById("messages")
+      .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+    // create db collection and send in the data
+    db.ref("messages/" + timestamp).set({
+      username,
+      userid,
+      message,
+    });
+    document.getElementById("message-btn").disabled = false
+  }
+
+  fetchChat.on("child_added", function (snapshot) {
+    const messages = snapshot.val();
+    const message = `<div class="mklf">
+                        <a class=${userid === messages.userid ? "sent" : "receive"}>
+                          <p class="username">${messages.username}</p>
+                          <p class="mass">${messages.message}</p>
+                          </a>
+                        </div>`;
+    document.getElementById("messages").innerHTML += message;
+    // console.log(messages.userid);
+    document.getElementById("messages").scrollIntoView();
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+  checkinp()
+</script>
+  <script>
+    function checkinp(){
+      if(document.getElementById("message-input").value ===""){
+        document.getElementById("message-btn").disabled = true
+      }
+      else{
+        document.getElementById("message-btn").disabled = false
+      }
+    }
+  </script>

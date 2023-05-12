@@ -1,0 +1,81 @@
+.dark{
+    background: #1f2533;
+}
+.dark #u{
+    color: white !important;
+}
+.dark #searchbar{
+    background: #1f2533;
+}
+.dark #inp{
+    background: #1f2533;
+    color: white;
+}
+.dark #btn{
+    color: white;
+}
+.dark #sugen{
+    background: #1f2533;
+    color: white;
+}
+.dark #nav{
+    background: #1f253300;
+}
+.dark #ch3{
+    color: white;
+}
+.dark .sed1{
+    background: #1f2533;
+}
+.dark .se1h2{
+    color: white;
+}
+.dark .se1h2{
+    color: white;
+}
+.dark #searchengines{
+    background: #1f2533;
+    color: white;
+}
+.dark #biclose{
+    color: white;
+}
+.dark #btn2{
+    color: white;
+}
+.dark #filetype{
+    background: #1f2533;
+    color: white;
+}
+.dark .newsdiv {
+    box-shadow: 0 1px 6px 0 rgba(240, 240, 240, 0.28);
+}
+.dark .newsdiv a{
+    color: rgb(255, 255, 255);
+}
+.dark .newsdiv a:hover{
+    color: #0099ff;
+}
+/* InfoEngine */
+.dark .bot{
+    color: white;
+    box-shadow: 0 1px 6px rgb(255 255 255 / 71%);
+}
+.dark .user{
+    color: white;
+}
+.dark .chatbar{
+    box-shadow: 0 1px 6px rgba(255, 255, 255, 0.28) !important;
+}
+.dark .bot .link a{
+    background: transparent;
+    box-shadow: 0 1px 6px rgba(231, 231, 231, 0.28);
+    color: #00ccff;
+}
+.dark .jfl{
+    box-shadow: 0 1px 6px rgba(231, 231, 231, 0.28);
+}
+.dark .jfl input{
+    background: transparent;
+    color: white;
+}

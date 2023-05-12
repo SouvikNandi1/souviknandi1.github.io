@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disunic</title>
+    <meta name="description"
+        content="Search the world's information, with all search engines in one platform. Disunic has many special features to help you find exactly what you're looking for." />
+    <meta name="Description"
+        content="Search the world's information, with all search engines in one platform. Disunic has many special features to help you find exactly what you're looking for." />
+    <meta name="keywords"
+        content="Disunic;Disuniccom;Disunic20 com;Disunic.com;Disunic;Disunic Kali Linux;Disunic;GithubDisunic;DisunicGithub,Tools,android" />
+    <!-- Google Search Console -->
+    <link href="google5c008597b24b52f5.html" />
+    <!-- <meta name="google-site-verification" content="UriDfeA0twBB__2r_Ys9aQNvz54t26kgiuxOe7kdFEk" /> -->
+    <!-- Bing Search Console -->
+    <link rel="stylesheet" href="BingSiteAuth.xml">
+    <!-- <meta name="msvalidate.01" content="58B98A2E1E1727D83AB6A6DDFB9F1C96" /> -->
+    <!--Exit-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.ico" type="icon" />
+    <link rel="favicon" href="favicon.ico" type="icon" />
+    <meta name="icon" content="favicon.ico" />
+    <meta name="image" content="favicon.ico" />
+    <meta name="twitter:image" content="favicon.ico" />
+    <script src="./js/page.js"></script>
+    <script src="./js/searchmodule.js"></script>
+    <script src="./js/searchengine.js"></script>
+    <script src="./js/alwayscheckfiletype.js"></script>
+    <script src="./js/logo.js"></script>
+    <script src="./js/app/check1.js"></script>
+    <script src="./js/app/check2.js"></script>
+    <script src="./js/app/inputs.js"></script>
+    <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/dark.css">
+    <link rel="stylesheet" href="./src/media.css">
+    <script src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body onload="singincheck(),check2(),check(),getlogofromdb(),alwayscheck()" id="body">
+    <div class="main" id="main">
+        <header>
+            <div class="nav" id="nav">
+                <i onclick="changesearchengine()"
+                    style="font-size: 27px;margin-left: 10px;cursor: pointer;color: #0095ff;" class="bi bi-lightning"
+                    id="sidebar"></i>
+                <i id="bilight" class="bi bi-brightness-low" onclick="lightmode()"></i>
+                <i id="bidark" class="bi bi-brightness-low-fill" onclick="darkmode()"></i>
+                <i onclick="window.open('./chat.html','_blank')" style="font-size: 28px; color: rgb(255, 0, 191);margin-left: 5px; padding: 0px 10px;" class="bi bi-chat-square-text"></i>
+                <img style="background-color: white;display: none;" id="searchch" src="" alt="" srcset=""
+                    onclick="changesearchengine()">
+                <img src="" alt="" id="disunicuser">
+            </div>
+        </header>
+        <div class="logo" id="logo">
+            <p style="color: #00aaff;">D</p>
+            <p style="color: #ff09ff;">I</p>
+            <p style="color: #ff6225;">S</p>
+            <p id="u" style="color: #1f2533;">U</p>
+            <p style="color: #ff6225;">N</p>
+            <p style="color: #ff09ff;">I</p>
+            <p style="color: #00aaff;">C</p>
+        </div>
+        <div class="searchcontent" id="searchcontent">
+            <div class="searchbar" id="searchbar">
+                <button style="margin-right: 5px;"><img id="searchch2" style="display: none;background-color: white;"
+                        src="" alt="" onclick="changesearchengine()"></button>
+                <input autocomplete="off" type="text" placeholder="Search Everything Here ..." id="inp" name=""
+                    >
+                <button id="btn" onclick="search()"><i style="font-size: 20px;" class="bi bi-search"></i></button>
+                <button id="btn2" style="display: none;" onclick="inpclickback()"><i class="bi bi-x-lg"
+                        style="font-size: 20px;margin-left: 10px;"></i></button>
+            </div>
+            <div class="moresc" id="moresc">
+                <select name="" id="filetype" onchange="alwayscheck()">
+                    <option value="Normal">Normal Search</option>
+                    <option value="Pdf">Pdf Search</option>
+                    <option value="Doc">Doc Search</option>
+                    <option value="Docx">Docx Search</option>
+                    <option value="xls">xls Search</option>
+                    <option value="pptx">pptx Search</option>
+                    <option value="txt">txt Search</option>
+                    <option value="png">png Search</option>
+                    <option value="jpg">jpg Search</option>
+                    <option value="rtf">rtf Search</option>
+                </select>
+                <!-- <button id="morescbtn" onclick="searchtheimg()">Image Search</button> -->
+            </div>
+            <div class="srch-suggest" id="sugen"></div>
+        </div>
+        <div class="add">
+            <div>
+                <p></p>
+            </div>
+        </div>
+        <div id="chatbox">
+            <div id="chatlog"></div>
+            <div class="chatbar">
+                <div class="jfl">
+                    <input type="search" autocomplete="off" id="chatinput" placeholder="Information AI Beta">
+                    <button id="chatbutton" onclick="button()"><i style="font-size: 28px;color:#0066ff;"
+                            class="bi bi-lightning-charge"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main2" id="main2">
+        <div class="content1" style="display: none !important;">
+            <h3 id="ch3">Our Products</h3>
+            <section id="sed1" class="sed1">
+                <div class="se1">
+                    <h2 id="se1h2" class="se1h2">Wikipedia AI</h2>
+                    <p>We Are Developed A New Wikipedia Version And Its React Like An AI.</p>
+                    <a href="https://disunic20.github.io/Disunic-AI/" target="_blank">Try Now</a>
+                    <a onclick="audiolay()" style="display:none" href="./pages/disunicx.html"
+                        target="_blank">Download</a>
+                </div>
+                <div class="se2">
+                    <img src="./img/internal/wikipediaai.png" draggable="false">
+                </div>
+            </section>
+            <section id="sed1 " class="sed1">
+                <div class="se1">
+                    <h2 id="se1h2" class="se1h2">The Cube</h2>
+                    <p>We Are Create A Rubik's Cube , Available In 2x2,3x3,4x4,5x5 .</p>
+                    <a onclick="audiolay()" href="./thecube.html" target="_blank">Try Now</a>
+                    <a onclick="audiolay()" style="display:none" href="./pages/disunicx.html"
+                        target="_blank">Download</a>
+                </div>
+                <div class="se2">
+                    <img src="./img/internal/thecube.png" draggable="false">
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="searchengines" id="searchengines">
+        <div class="aaaa">
+            <h2>Choose A Search Engine</h2>
+            <button onclick="changesearchenginecls()"><i class="bi bi-x-circle" id="biclose"></i></button>
+        </div>
+        <div class="cc" id="disunic" onclick="disunicsearchforlogic()">
+            <img src="./img/external/disuniclogo.png" alt="">
+            Disunic
+        </div>
+        <div class="cc" id="google" onclick="googlesearchforlogic()">
+            <img src="./img/external/googlelogo.png" alt="">
+            Google
+        </div>
+        <div class="cc" id="bing" onclick="bingsearchforlogic()">
+            <img src="./img/external/binglogo.jpeg" alt="">
+            Bing
+        </div>
+        <div class="cc" id="info" onclick="informationsearchforlogic()">
+            <img src="./img/external/disuniclogo.png" alt="">
+            Information AI
+        </div>
+        <div class="cc" id="brave" onclick="bravesearchforlogic()">
+            <img src="./img/external/brave.png" alt="">
+            Brave
+        </div>
+        <div class="cc" id="yahoo" onclick="yahoosearchforlogic()">
+            <img src="./img/external/yahoologo.jpeg" alt="">
+            Yahoo
+        </div>
+        <div class="cc" id="duckduckgo" onclick="duckduckgosearchforlogic()">
+            <img src="./img/external/duckduckgologo.png" alt="">
+            DuckDuckGo
+        </div>
+        <div class="cc" id="metager" onclick="metagersearchforlogic()">
+            <img src="./img/external/metager.png" alt="">
+            MetaGer
+        </div>
+        <div class="cc" id="aol" onclick="aolsearchforlogic()">
+            <img src="./img/external/aollogo.png" alt="">
+            Aol
+        </div>
+        <div class="cc" id="mojeek" onclick="mojeeksearchforlogic()">
+            <img src="./img/external/mojeeklogo.svg" alt="">
+            Mojeek
+        </div>
+        <div class="cc" id="qwant" onclick="qwantsearchforlogic()">
+            <img src="./img/external/qwant.jfif" alt="">
+            Qwant
+        </div>
+        <div class="cc" id="dogpile" onclick="dogpilesearchforlogic()">
+            <img src="./img/external/dogpilelogo.png" alt="">
+            Dogpile
+        </div>
+        <div class="cc" id="ecosia" onclick="ecosiasearchforlogic()">
+            <img src="./img/external/ecosialogo.jfif" alt="">
+            Ecosia
+        </div>
+        <div class="cc" id="yandex" onclick="yandexsearchforlogic()">
+            <img src="./img/external/Yandexlogo.png" alt="">
+            Yandex
+        </div>
+        <div class="cc" id="kiddle" onclick="kiddlesearchforlogic()">
+            <img src="./img/external/Kiddle.png" alt="">
+            Kiddle
+        </div>
+        <div class="cc" id="codepen" onclick="codepensearchforlogic()">
+            <img src="./img/external/codepen.png" alt="">
+            Codepen
+        </div>
+    </div>
+    <div class="notification"></div>
+    <div class="news" id="news"></div>
+    <script src="./js/indataset.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script src="./js/logouser.js"></script>
+    <script src="./js/db.push.js"></script>
+    <script src="./js/checksingin.js"></script>
+    <script src="./js/newsapi.js"></script>
+    <script src="./js/getnews.js"></script>
+
+</body>
+
+</html>
+<script>
+    var srchSugg = document.querySelector(".srch-suggest");
+    var srchInput = document.getElementById("inp");
+    var articlesCon = document.getElementById("result");
+
+    srchInput.addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+            // search()
+            // alwayschecks()
+            if (filetype2 === "Normal") {
+                // sendMessage()
+                search()
+            }
+            else {
+                // sendMessage()
+                searchusingtype()
+            }
+            console.log("sss")
+        }
+        else if (srchInput.value) {
+            // alwayschecks()
+            suggSearch(suggURL + srchInput.value.split(" ").join("+"));
+        }
+        else {
+        }
+    });
+    var suggURL = "https://en.wikipedia.org/w/api.php?action=query&format=json&callback=suggCallback&list=prefixsearch&pslimit=100&pssearch=";
+
+    function wikiSearch(url) {
+        var script = document.createElement("script");
+        script.src = url;
+        document.body.appendChild(script);
+        document.body.removeChild(script);
+    }
+    function suggSearch(url) {
+        var script = document.createElement("script");
+        script.src = url;
+        document.body.appendChild(script);
+        document.body.removeChild(script);
+    }
+    function suggCallback(data) {
+        srchSugg.innerHTML = '';
+        srchSugg.style.display = "block";
+        $('.searchcontent').css('box-shadow', '0px 0px 2px 0px gray');
+        $('.searchcontent').css('border-radius', '10px');
+        document.getElementById("moresc").style.borderBottom = "2px solid gray";
+        // document.getElementById("moresc").style.borderImage = "linear-gradient(315deg, #00ddff 0%, #ff00d4 74%) 80";
+        document.getElementById("searchcontent").style.borderBottom = "none";
+        var titles = data.query.prefixsearch;
+
+        titles.forEach(function (title) {
+            var suggestion = document.createElement("h3");
+            suggestion.classList.add("srch-suggest_title");
+            suggestion.setAttribute("id", "search-t")
+            $('#search-t').click(function () {
+
+            });
+            suggestion.textContent = title.title;
+            suggestion.addEventListener("click", function () {
+                srchInput.value = this.textContent;
+                // search()
+                console.log("bal")
+                if (filetype2 === "Normal") {
+                    search()
+                }
+                else {
+                    searchusingtype()
+                }
+            });
+            srchSugg.appendChild(suggestion);
+        });
+    }
+    function wikiCallback(data) {
+        $('#search').click();
+        articlesCon.innerHTML = "";
+        srchSugg.style.display = "none";
+        srchSugg.innerHTML = '';
+        var pages = data.query.pages;
+        for (var page in pages) {
+            var articleURL = pages[page].fullurl;
+            var articleTitle = pages[page].title;
+            var articleExtract = pages[page].extract;
+
+            var article = '<div class="article"><a href="' + articleURL + '" target="">';
+            article += '<h2 class="rah">' + articleTitle + '</h2>';
+            article += '<p class="">' + articleExtract + '<p>';
+            article += '</a></div>';
+
+            articlesCon.insertAdjacentHTML("beforeend", article);
+            $('.searchbar').css('display', 'none');
+            document.documentElement.scrollTop = 0;
+        }
+    }
+
+</script>
+
+<script>
+    function singincheck() {
+        if (localStorage.getItem("singuser") === null) {
+            window.open("./login.html", "_self")
+        }
+        // else if (localStorage.setItem("singuser") ===localStorage.getItem("singuser")) {
+        //     window.open("./index.html", "_self")
+        // }
+    }
+
+</script>

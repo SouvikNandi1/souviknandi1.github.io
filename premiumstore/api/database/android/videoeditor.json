@@ -1,0 +1,38 @@
+{
+  "host":"Disunic LLC",
+  "status": "OK",
+  "totalresult": "♾",
+  "api": [
+    {
+      "title": "Filmora",
+      "img": "/premiumstore/imgs/android/filmora.png",
+      "url": "/premiumstore/android/filmora.html"
+    },
+    {
+      "title": "Inshot",
+      "img": "/premiumstore/imgs/android/inshot.jpg",
+      "url": "/premiumstore/android/inshot.html"
+    },
+    {
+      "title": "PowerDirector",
+      "img": "/premiumstore/imgs/android/powerdirector.jpg",
+      "url": "/premiumstore/android/powerdirector.html"
+    },
+    {
+      "title": "VivaCut",
+      "img": "/premiumstore/imgs/android/vivacut.jpg",
+      "url": "/premiumstore/android/vivacut.html"
+    },
+    {
+      "title": "Shotcut",
+      "img": "/premiumstore/imgs/android/shotcut.png",
+      "url": "/premiumstore/android/shotcut.html"
+    }
+    ,
+    {
+      "title": "Kinemaster",
+      "img": "/premiumstore/imgs/android/kinemaster.jpg",
+      "url": "/premiumstore/android/kinemaster.html"
+    }
+  ]
+}

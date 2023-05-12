@@ -1,0 +1,37 @@
+{
+    "responses": [
+        {
+            "keywords": [
+                "hello"
+            ],
+            "response": "Hello! How can I help you today?"
+        },
+        {
+            "keywords": [
+                "what's up",
+                "what is up"
+            ],
+            "response": "Not much, just here to help. How can I assist you?"
+        },
+        {
+            "keywords": [
+                "how are you"
+            ],
+            "response": "I am an AI language model and do not have emotions or physical sensations."
+        },
+        {
+            "keywords": [
+                "disunic"
+            ],
+            "response": "Disunic is a open source project developed by Disunic Corporation. Disunic Working To Make The Advance Web and Software Tecnology.",
+            "link": "https://disunic.github.io/",
+            "linktitle": "disunic.github.io"
+        },
+        {
+            "keywords": [
+                "souvik nandi"
+            ],
+            "response": "Souvik Nandi is the Ceo of Disunic Corporation."
+        }
+    ]
+}
