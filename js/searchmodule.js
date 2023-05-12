@@ -5,7 +5,8 @@ function search() {
         window.open("https://google.com/search?q=" + input, "_self")
     }
     else if (engine === "Disunic") {
-        window.open("https://disunic.github.io/search.html#gsc.tab=0&gsc.q=" + input, "_self")
+        window.open("./search.html#gsc.tab=0&gsc.q=" + input, "_self")
+        // window.open("https://disunic.github.io/search.html#gsc.tab=0&gsc.q=" + input, "_self")
     }
     else if (engine === "Bing") {
         window.open("https://www.bing.com/search?q=" + input, "_self")
@@ -57,7 +58,8 @@ function searchusingtype() {
         window.open("https://google.com/search?q="  + input +" filetype:"+filetype2, "_self")
     }
     else if (engine === "Disunic") {
-        window.open("https://disunic.github.io/search.html#gsc.tab=0&gsc.q=" + input +" filetype:"+filetype2, "_self")
+        window.open("./search.html#gsc.tab=0&gsc.q=" + input, "_self")
+        // window.open("https://disunic.github.io/search.html#gsc.tab=0&gsc.q=" + input +" filetype:"+filetype2, "_self")
     }
     else if (engine === "Bing") {
         window.open("https://www.bing.com/search?q=" + input +" filetype:"+filetype2, "_self")

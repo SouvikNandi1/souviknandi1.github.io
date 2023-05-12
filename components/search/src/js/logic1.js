@@ -27,18 +27,27 @@ function sweb() {
     localStorage.setItem("tab", "web")
     checkonload2()
     let query = document.getElementById("gsc-i-id1").value;
-    window.open("https://disunic.github.io/search.html#gsc.tab=0&gsc.sort=&gsc.q=" + query, "_self")
+    // https://souvik112004.github.io/search.html#gsc.tab=0&gsc.sort=&gsc.q=
+    // https://disunic.github.io/search.html#gsc.tab=0&gsc.sort=&gsc.q=
+    let url = "https://disunic.github.io/search.html#gsc.tab=0&gsc.sort=&gsc.q="
+    let urlbeta = "https://souviknandi2004.github.io/search.html#gsc.tab=0&gsc.sort=&gsc.q="
+    window.open(urlbeta + query, "_self")
 }
 function simg() {
     localStorage.setItem("tab", "img")
     checkonload2()
     let query = document.getElementById("gsc-i-id1").value;
-    window.open("https://disunic.github.io/search.html#gsc.tab=1&gsc.sort=&gsc.q=" + query, "_self")
+    let url = "https://disunic.github.io/search.html#gsc.tab=1&gsc.sort=&gsc.q="
+    let urlbeta = "https://souviknandi2004.github.io/search.html#gsc.tab=1&gsc.sort=&gsc.q="
+    window.open(urlbeta + query, "_self")
 }
 function svideo() {
     localStorage.setItem("tab", "video")
     checkonload2()
     let query = document.getElementById("gsc-i-id1").value;
+    document.getElementsByClassName("gsc-wrapper")[0].style.display = "none"
+    document.getElementById("wrapper-video").style.display = "block"
+    videosearch()
 }
 function wiki() {
     setTimeout(() => {
@@ -53,7 +62,7 @@ function wiki() {
                     resultHtml += "<img src='" + page.thumbnail.source + "' alt='" + page.title + "'>";
                     resultHtml += "<p id='wikitext'>" + page.extract + "</p>";
                     resultHtml += "<a href='https://en.wikipedia.org/?curid=" + page.pageid + "' target='_blank'>Read more</a>";
-                    resultHtml += "<a style='float: left;margin-left: 15px; ' onclick='wikilisten()'>Listen</a>"
+                    resultHtml += "<a style='float: ;margin-left: 15px; ' onclick='wikilisten()'>Listen</a>"
                 });
                 console.clear()
                 logo()
