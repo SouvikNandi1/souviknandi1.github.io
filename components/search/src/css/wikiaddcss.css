@@ -10,6 +10,13 @@
     display: none;
 }
 
+#wikidisunic table.infobox {
+    width: 100% !important;
+}
+
+#wikidisunic td.infobox-image {
+    text-align: center;
+}
 
 #wikidisunic caption.infobox-title.fn.org {
     font-size: 28px;
@@ -43,11 +50,13 @@
     padding: 15px 0px;
     background: transparent !important;
 }
-#wikidisunic td img{
+
+#wikidisunic td img {
     /* display: none; */
     background: white;
     border-radius: 10px;
 }
+
 #wikidisunic td {
     border-bottom: 2px solid;
     border-color: gray;

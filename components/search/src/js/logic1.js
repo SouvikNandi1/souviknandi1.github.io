@@ -19,7 +19,8 @@ function mainload() {
     buttonimg[0].innerHTML = "<i class='bi bi-search'></i>";
     let query = document.getElementById("gsc-i-id1").value;
     wiki()
-    document.getElementsByClassName("gsc-search-button-v2")[0].setAttribute("onclick", "wiki(),videosearch()");
+    searchRecipes()
+    document.getElementsByClassName("gsc-search-button-v2")[0].setAttribute("onclick", "wiki(),videosearch(),searchRecipes()");
 }
 
 // Tab Bar
@@ -46,34 +47,34 @@ function svideo() {
     document.getElementById("wrapper-video").style.display = "block"
     videosearch()
 }
-// function wiki() {
-//     setTimeout(() => {
-//         var userInput = $("#gsc-i-id1").val();
-//         // var userInput = document.getElementById("gsc-i-id1").value
-//         $.getJSON("https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&redirects=1&gsrnamespace=0&gsrlimit=1&prop=pageimages|extracts&pilimit=max&exintro&pithumbsize=400&explaintext&exsentences=8&exlimit=max&gsrsearch=" + encodeURIComponent(userInput) + "&callback=?", function (data) {
-//             try {
-//                 wikiaddsenginedisunic()
-//                 var pages = data.query.pages;
-//                 var resultHtml = "";
-//                 $.each(pages, function (id, page) {
-//                     resultHtml += "<img src='" + page.thumbnail.source + "' alt='" + page.title + "'>";
-//                     resultHtml += "<p id='wikitext'>" + page.extract + "</p>";
-//                     resultHtml += "<a href='https://en.wikipedia.org/?curid=" + page.pageid + "' target='_blank'>Read more</a>";
-//                     resultHtml += "<a style='float: ;margin-left: 15px; ' onclick='wikilisten()'>Listen</a>"
-//                 });
-//                 console.clear()
-//                 logo()
-//                 $("#wikidisunic").html(resultHtml);
-//             }
-//             catch {
-//                 document.getElementById("wikidisunic").remove()
-//             }
-//         });
-//     }, 500);
-
-// }
 function wiki() {
-    const searchTerm = $('input[type="text"]').val();
+    setTimeout(() => {
+        var userInput = $("#gsc-i-id1").val();
+        // var userInput = document.getElementById("gsc-i-id1").value
+        $.getJSON("https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&redirects=1&gsrnamespace=0&gsrlimit=1&prop=pageimages|extracts&pilimit=max&exintro&pithumbsize=400&explaintext&exsentences=8&exlimit=max&gsrsearch=" + encodeURIComponent(userInput) + "&callback=?", function (data) {
+            try {
+                // wikiaddsenginedisunic()
+                var pages = data.query.pages;
+                var resultHtml = "";
+                // let gghgjgk = page.title;
+                $.each(pages, function (id, page) {
+                    localStorage.setItem("bjfl",page.title)
+                    wiki2()
+                });
+                console.clear()
+                logo()
+                // $("#wikidisunic").html(resultHtml);
+            }
+            catch {
+                document.getElementById("wikidisunic").remove()
+            }
+        });
+    }, 400);
+
+}
+function wiki2() {
+    // const searchTerm = $('input[type="text"]').val();
+    const searchTerm = localStorage.getItem("bjfl")
     $.ajax({
         url: 'https://en.wikipedia.org/w/api.php',
         data: {
@@ -100,14 +101,14 @@ function wiki() {
         },
         dataType: 'jsonp',
         success: function (data) {
-            wikiaddsenginedisunic()
+            
             const resultText = data.parse.text['*'];
             const resultDiv = $('#result');
+            wikiaddsenginedisunic()
             resultDiv.html(resultText);
             const elements = document.querySelectorAll('*');
             const infobox = $(resultText).find('.infobox');
             $('#wikidisunic').html(infobox)
-            $('#result').remove();
             const links = document.querySelectorAll('a');
             links.forEach(link => {
                 if (!link.classList.contains('external')) {
@@ -116,16 +117,29 @@ function wiki() {
                     link.setAttribute('href', href);
                 }
             });
+            $('#result').remove();
+            setTimeout(() => {
+                removenotshow()
+            }, 1000);
+            function removenotshow(){
+                if(document.getElementById("wikidisunic") === ""){
+                    document.getElementById("wikidisunic").remove()
+                }
+            }
         },
         error: function (error) {
             console.error(error);
+            document.getElementById("wikidisunic").remove()
         }
     });
 }
+
 function wikiaddsenginedisunic() {
     $(".gsc-webResult").eq(1).after("<div class='gsc-webResult gsc-result' id='wikidisunic'></div>");
 }
-
+function recipeaddsenginedisunic() {
+    $(".gsc-webResult").eq(2).after("<div class='gsc-webResult gsc-result' id='recipedisunic'></div>");
+}
 function wikilisten() {
     const utterance = new SpeechSynthesisUtterance();
 

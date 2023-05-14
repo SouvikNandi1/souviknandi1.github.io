@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./components/search/src/css/dark.css" />
   <script src="./components/search/src/js/check.js"></script>
   <script src="./components/search/src/js/logic1.js"></script>
+  <script src="./components/search/src/js/recipe.js"></script>
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="./js/logo.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -24,6 +25,7 @@
   <div style="display: none;" class="wrapper-video" id="wrapper-video">
     <p>Loading</p>
   </div>
+  <div class="recipe"></div>
 </body>
 
 </html>
@@ -45,6 +47,7 @@
         // owwo()
         wiki();
         videosearch()
+        searchRecipes()
       }
     });
   }, 1000);
@@ -56,7 +59,7 @@
     for (var i = 0; i < document.getElementsByClassName("gssb_e").length; i++) {
       document
         .getElementsByClassName("gssb_e")
-      [i].setAttribute("onclick", "wiki(),videosearch()");
+      [i].setAttribute("onclick", "wiki(),videosearch(),searchRecipes()");
     }
   }
 
