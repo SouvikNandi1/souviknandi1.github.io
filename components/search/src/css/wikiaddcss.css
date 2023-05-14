@@ -1,0 +1,111 @@
+#wikidisunic table.infobox.vcard {
+    padding: 10px;
+}
+
+#wikidisunic caption {
+    display: none;
+}
+
+#wikidisunic th.infobox-above.fn {
+    display: none;
+}
+
+#wikidisunic caption.infobox-title.fn.org {
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(40, 38, 41);
+    
+}
+
+#wikidisunic table.infobox.vcard tbody {
+    margin: auto;
+    text-align: center;
+}
+
+#wikidisunic table.infobox.vcard tbody tr {
+    text-align: left;
+    margin: auto;
+}
+
+#wikidisunic div.infobox.vcard {
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 1px 8px rgba(21, 21, 22, 0.2);
+    padding: 10px 0px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+#wikidisunic th {
+    border-bottom: 2px solid;
+    border-color: gray;
+    padding: 15px 0px;
+    background: transparent !important;
+}
+#wikidisunic td img{
+    /* display: none; */
+    background: white;
+    border-radius: 10px;
+}
+#wikidisunic td {
+    border-bottom: 2px solid;
+    border-color: gray;
+    padding: 15px 0px;
+}
+
+#wikidisunic td.infobox-image.logo {
+    text-align: center;
+
+}
+
+#wikidisunic td.infobox-image.logo img {
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+
+#wikidisunic div.infobox.vcard tr {
+    line-height: 2;
+}
+
+#wikidisunic a {
+    color: #00dcff !important;
+    text-decoration: none;
+}
+
+#wikidisunic .thumbinner {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#wikidisunic .thumbinner img {
+    border-radius: 10px;
+}
+
+#wikidisunic p {
+    width: 90%;
+    margin: auto;
+    line-height: 1.5rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+#wikidisunic p a {
+    color: rgb(3, 57, 233);
+    text-decoration: none;
+}
+
+#wikidisunic b {
+    font-size: 20px;
+}
+
+#wikidisunic h2,
+h3,
+h4,
+h5 {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

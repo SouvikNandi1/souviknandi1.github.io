@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,11 +14,12 @@
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="./js/logo.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./components/search/src/css/wikiaddcss.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
-<body class="" id="body" onload="checkonload(),checkonload2(),mainload(),checkdv(),console.clear(),logo()">
+<body class="" id="body" onload="checkonload(),checkonload2(),mainload(),checkdv(),sweb(),console.clear(),logo()">
   <script async src="https://cse.google.com/cse.js?cx=0fbf3f19074e8025e"></script>
   <div class="gcse-search"></div>
   <div style="display: none;" class="wrapper-video" id="wrapper-video">
@@ -44,6 +45,7 @@
         // Call your function here
         // owwo()
         wiki();
+        videosearch()
       }
     });
   }, 1000);
@@ -55,7 +57,7 @@
     for (var i = 0; i < document.getElementsByClassName("gssb_e").length; i++) {
       document
         .getElementsByClassName("gssb_e")
-      [i].setAttribute("onclick", "wiki()");
+      [i].setAttribute("onclick", "wiki(),videosearch()");
     }
   }
 </script>
@@ -140,13 +142,13 @@
                 <img src=`+ videoimg + `></img>
                 <div class="titetc">
                   <p class="cc">Title</p>
-                  <p>`+ videotitle + `</p>
+                  <p style='color:#fff900;'>`+ videotitle + `</p>
                   <p class="cc">Description</p>
-                  <p>`+ videodesc + `</p>
+                  <p style='color:#54ffa1;'>`+ videodesc + `</p>
                   <p class="cc">Channel</p>
-                  <p>`+ videochann + `</p>
+                  <p style='color:#00c3ff;'>`+ videochann + `</p>
                   <p class="cc">Time</p>
-                  <p>`+ videotime + `</p>
+                  <p style='color:#ff00bb;'>`+ videotime + `</p>
                 </div>
               </a>
               </div>
