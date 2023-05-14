@@ -52,22 +52,15 @@ function wiki() {
         var userInput = $("#gsc-i-id1").val();
         // var userInput = document.getElementById("gsc-i-id1").value
         $.getJSON("https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&redirects=1&gsrnamespace=0&gsrlimit=1&prop=pageimages|extracts&pilimit=max&exintro&pithumbsize=400&explaintext&exsentences=8&exlimit=max&gsrsearch=" + encodeURIComponent(userInput) + "&callback=?", function (data) {
-            try {
-                // wikiaddsenginedisunic()
-                var pages = data.query.pages;
-                var resultHtml = "";
-                // let gghgjgk = page.title;
-                $.each(pages, function (id, page) {
-                    localStorage.setItem("bjfl",page.title)
-                    wiki2()
-                });
-                console.clear()
-                logo()
-                // $("#wikidisunic").html(resultHtml);
-            }
-            catch {
-                document.getElementById("wikidisunic").remove()
-            }
+            var pages = data.query.pages;
+            var resultHtml = "";
+            $.each(pages, function (id, page) {
+                localStorage.setItem("bjfl", page.title)
+                wiki2()
+            });
+            console.clear()
+            logo()
+            // $("#wikidisunic").html(resultHtml);
         });
     }, 400);
 
@@ -101,11 +94,15 @@ function wiki2() {
         },
         dataType: 'jsonp',
         success: function (data) {
-            
             const resultText = data.parse.text['*'];
+            if (resultText.trim() === '') {
+                alert('No results found. Please try again.');
+                return;
+            }
             const resultDiv = $('#result');
             wikiaddsenginedisunic()
             resultDiv.html(resultText);
+
             const elements = document.querySelectorAll('*');
             const infobox = $(resultText).find('.infobox');
             $('#wikidisunic').html(infobox)
@@ -118,14 +115,10 @@ function wiki2() {
                 }
             });
             $('#result').remove();
-            setTimeout(() => {
-                removenotshow()
-            }, 1000);
-            function removenotshow(){
-                if(document.getElementById("wikidisunic") === ""){
-                    document.getElementById("wikidisunic").remove()
-                }
+            if (document.getElementById("wikidisunic").innerHTML.trim() === "") {
+                document.getElementById("wikidisunic").remove()
             }
+
         },
         error: function (error) {
             console.error(error);

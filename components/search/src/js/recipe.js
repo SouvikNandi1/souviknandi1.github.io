@@ -27,7 +27,7 @@ function displayRecipes(hits) {
     
     $recipeContainer.empty();
     if (hits.length === 0) {
-        // alert("No results found.");
+        document.getElementById("recipedisunic").remove()
         return;
     }
     

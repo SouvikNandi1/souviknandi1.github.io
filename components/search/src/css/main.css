@@ -297,25 +297,25 @@ a.gs-image {
 }
 
 #recipedisunic::-webkit-scrollbar {
-    height: 10px;
+    height: 15px;
+    width: 500px !important;
+    border-radius: 0px !important;
     ;
     /* set the width of the scrollbar */
 }
 
 #recipedisunic::-webkit-scrollbar-track {
-    background: transparent;
+    background: rgb(87, 87, 87);
+    border-radius: 0px !important;
     /* set the background color of the scrollbar track */
 }
 
 #recipedisunic::-webkit-scrollbar-thumb {
     background: #0655ff;
+    border-radius: 1px !important;
     /* set the color of the scrollbar thumb */
 }
 
-#recipedisunic::-webkit-scrollbar-thumb:hover {
-    background: transparent;
-    /* set the color of the scrollbar thumb on hover */
-}
 
 #recipedisunic .recipe-item {
     margin: 0px 10px;
@@ -341,6 +341,7 @@ a.gs-image {
     font-weight: 700;
     border-radius: 4px;
     border: none;
+    cursor: pointer;
 }
 
 #wikidisunic {
@@ -353,7 +354,7 @@ a.gs-image {
     float: right;
     position: absolute;
     right: 10px;
-    width: 45% !important;
+    width: 40% !important;
     top: 7px;
 }
 
