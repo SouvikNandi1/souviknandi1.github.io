@@ -108,7 +108,7 @@ function wiki2() {
             $('#wikidisunic').html(infobox)
             const links = document.querySelectorAll('a');
             links.forEach(link => {
-                if (!link.classList.contains('external')) {
+                if (!link.classList.contains('external') && !link.classList.contains('gsst_a')) {
                     let href = link.getAttribute('href');
                     href = "https://en.wikipedia.org" + href;
                     link.setAttribute('href', href);
