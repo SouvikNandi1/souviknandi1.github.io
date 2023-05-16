@@ -16,8 +16,10 @@
     <div id="messages"></div>
     <form id="message-form">
       <div class="bar">
-        <input onkeyup="checkinp()" id="message-input" type="text" placeholder="Type Your Message....." autocomplete="off" />
-        <button disabled id="message-btn" onclick="window.scrollTo(0,document.body.scrollHeight),checkinp()" type="submit">
+        <input onkeyup="checkinp()" id="message-input" type="text" placeholder="Type Your Message....."
+          autocomplete="off" />
+        <button disabled id="message-btn" onclick="window.scrollTo(0,document.body.scrollHeight),checkinp()"
+          type="submit">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="blue" class="bi bi-send"
             viewBox="0 0 16 16">
             <path
@@ -100,13 +102,13 @@
   });
   checkinp()
 </script>
-  <script>
-    function checkinp(){
-      if(document.getElementById("message-input").value ===""){
-        document.getElementById("message-btn").disabled = true
-      }
-      else{
-        document.getElementById("message-btn").disabled = false
-      }
+<script>
+  function checkinp() {
+    if (document.getElementById("message-input").value === "") {
+      document.getElementById("message-btn").disabled = true
     }
-  </script>
+    else {
+      document.getElementById("message-btn").disabled = false
+    }
+  }
+</script>

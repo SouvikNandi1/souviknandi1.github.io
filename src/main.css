@@ -595,3 +595,6 @@ section {
 .news .newsdiv a:hover {
     color: #006aff;
 }
+#aboutwebsite p{
+    color: rgb(0, 0, 0);
+}
