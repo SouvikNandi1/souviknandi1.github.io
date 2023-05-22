@@ -58,7 +58,8 @@
                     class="bi bi-chat-square-text"></i>
                 <img style="background-color: white;display: none;" id="searchch" src="" alt="" srcset=""
                     onclick="changesearchengine()">
-                <img src="" alt="" id="disunicuser">
+                <img style="display: none;" src="" alt="" id="disunicuser">
+                <button style="display: none;" onclick="window.open('./login.html','_self')" class="btn-main-sing" id="btn-main-sing">Sign in</button>
             </div>
         </header>
         <div class="logo" id="logo">
@@ -74,8 +75,10 @@
             <div class="searchbar" id="searchbar">
                 <button style="margin-right: 5px;"><img id="searchch2" style="display: none;background-color: white;"
                         src="" alt="" onclick="changesearchengine()"></button>
-                <input onkeyup="checkinp()" autocomplete="off" type="text" placeholder="Search Everything Here ..." id="inp" name="">
-                <button disabled id="btn" onclick="search()"><i style="font-size: 20px;" class="bi bi-search"></i></button>
+                <input onkeyup="checkinp()" autocomplete="off" type="text" placeholder="Search Everything Here ..."
+                    id="inp" name="">
+                <button disabled id="btn" onclick="search()"><i style="font-size: 20px;"
+                        class="bi bi-search"></i></button>
                 <button id="btn2" style="display: none;" onclick="inpclickback()"><i class="bi bi-x-lg"
                         style="font-size: 20px;margin-left: 10px;"></i></button>
             </div>
@@ -213,9 +216,7 @@
     </div>
     <div class="notification"></div>
     <div class="news" id="news" style="display: none !important;"></div>
-    <div id="aboutwebsite">
-
-    </div>
+    <div id="aboutwebsite"></div>
     <script src="./js/indataset.js"></script>
     <script src="./api/js/disunic.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
@@ -238,20 +239,15 @@
 
     srchInput.addEventListener("keyup", function (e) {
         if (e.keyCode === 13) {
-            // search()
-            // alwayschecks()
             if (filetype2 === "Normal") {
-                // sendMessage()
                 search()
             }
             else {
-                // sendMessage()
                 searchusingtype()
             }
             console.log("sss")
         }
         else if (srchInput.value) {
-            // alwayschecks()
             suggSearch(suggURL + srchInput.value.split(" ").join("+"));
         }
         else {
@@ -330,11 +326,21 @@
 <script>
     function singincheck() {
         if (localStorage.getItem("singuser") === null) {
-            window.open("./login.html", "_self")
+            // window.open("./login.html", "_self")
+            document.getElementById("disunicuser").style.display="none"
+            document.getElementById("btn-main-sing").style.display="block"
+            localStorage.setItem("singuser2","disunicuser@gmail.com")
         }
         // else if (localStorage.setItem("singuser") ===localStorage.getItem("singuser")) {
-        //     window.open("./index.html", "_self")
+            
         // }
+        else{
+            document.getElementById("disunicuser").style.display="block"
+            document.getElementById("btn-main-sing").style.display="none"
+        }
+    }
+    function nnbmmm(){
+
     }
 
 </script>

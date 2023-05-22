@@ -16,9 +16,8 @@ function signInWithGoogle() {
     provider.addScope('profile');
     provider.addScope('email');
     myApp1.auth().signInWithRedirect(provider);
+    // myApp1.auth().signInWithPopup(provider);
 }
-// signInWithGoogle()
-// Get the user's data after sign in
 myApp1.auth().getRedirectResult()
     .then(function (result) {
         if (result.user) {
@@ -35,6 +34,7 @@ myApp1.auth().getRedirectResult()
         var errorMessage = error.message;
         console.log(errorCode, errorMessage);
     });
+
 
 // Login form
 var loginForm = document.querySelector('#login-form');
@@ -57,6 +57,68 @@ loginForm.addEventListener('submit', (e) => {
             var errorCode = error.code;
             var errorMessage = error.message;
             // Show error message to user
+            function fffFflof() {
+                setTimeout(() => {
+                    document.getElementById("error").style.display = "none"
+                }, 5000);
+            }
+            if (errorCode === 'auth/invalid-email') {
+                // console.log('Invalid email format');
+                document.getElementById("error").innerHTML = `Invalid email format`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/wrong-password') {
+                // console.log('Wrong password');
+                document.getElementById("error").style.display = "block "
+                document.getElementById("error").innerHTML = `Wrong password`
+
+            }
+            else if (errorCode === 'auth/user-not-found') {
+                console.log('User not found');
+                document.getElementById("error").innerHTML = `User not found`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/user-disabled') {
+                console.log('User is disabled');
+                document.getElementById("error").innerHTML = `User is disabled`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/weak-password') {
+                // console.log('Weak password');
+                document.getElementById("error").innerHTML = `Weak password`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/email-already-in-use') {
+                // console.log('Email is already in use');
+                document.getElementById("error").innerHTML = `Email is already in use`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/operation-not-allowed') {
+                // console.log('Operation not allowed');
+                document.getElementById("error").innerHTML = `Operation not allowed`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/too-many-requests') {
+                // console.log('Too many requests. Please try again later');
+                document.getElementById("error").innerHTML = `Too many requests. Please try again later`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/invalid-credential') {
+                // console.log('Invalid credential');
+                document.getElementById("error").innerHTML = `Invalid credential`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/account-exists-with-different-credential') {
+                console.log('An account already exists with the same email address but different sign-in credentials');
+            }
+            else if (errorCode === 'auth/network-request-failed') {
+                console.log('Network request failed. Please check your internet connection');
+            }
+            else {
+                console.log('Unknown error occurred');
+                console.log(errorCode);
+            }
+            fffFflof()
         });
 
 });
@@ -83,23 +145,78 @@ signupForm.addEventListener('submit', (e) => {
             localStorage.setItem("singuser", user.email)
             window.open("./frames/uploaddp.html", "_self")
         })
+        // .catch((error) => {
+        //     var errorCode = error.code;
+        //     var errorMessage = error.message;
+        //     // Show error message to user
+        // });
         .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
-            // Show error message to user
+            function fffFflof2() {
+                setTimeout(() => {
+                    document.getElementById("error").style.display = "none"
+                }, 5000);
+            }
+            if (errorCode === 'auth/invalid-email') {
+                // console.log('Invalid email format');
+                document.getElementById("error").innerHTML = `Invalid email format`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/wrong-password') {
+                // console.log('Wrong password');
+                document.getElementById("error").innerHTML = `Wrong password`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/user-not-found') {
+                // console.log('User not found');
+                document.getElementById("error").innerHTML = `User not found`
+                document.getElementById("error").style.display = "block "
+            }
+            else if (errorCode === 'auth/user-disabled') {
+                // console.log('User is disabled');
+                document.getElementById("error").innerHTML = `User is disabled`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/weak-password') {
+                // console.log('Weak password');
+                document.getElementById("error").innerHTML = `Weak password`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/email-already-in-use') {
+                // console.log('Email is already in use');
+                document.getElementById("error").innerHTML = `Email is already in use`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/operation-not-allowed') {
+                // console.log('Operation not allowed');
+                document.getElementById("error").innerHTML = `Operation not allowed`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/too-many-requests') {
+                // console.log('Too many requests. Please try again later');
+                document.getElementById("error").innerHTML = `Too many requests. Please try again later`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/invalid-credential') {
+                // console.log('Invalid credential');
+                document.getElementById("error").innerHTML = `Invalid credential`
+                document.getElementById("error").style.display = "block"
+            }
+            else if (errorCode === 'auth/account-exists-with-different-credential') {
+                console.log('An account already exists with the same email address but different sign-in credentials');
+            }
+            else if (errorCode === 'auth/network-request-failed') {
+                console.log('Network request failed. Please check your internet connection');
+            }
+            else {
+                console.log('Unknown error occurred');
+                console.log(errorCode);
+            }
+            fffFflof2()
         });
+
 });
-
-
-
-
-
-
-
-
-
-
-
 function singupfunction() {
     document.getElementById("fname").innerHTML = 'Signup Now'
     document.getElementById("login-form").style.display = "none"
@@ -107,4 +224,55 @@ function singupfunction() {
     document.getElementById("sbtnp").innerHTML = 'Already have an account?'
     document.getElementById("sbtnpbtn").innerHTML = 'Log in here!'
     document.getElementById("sbtnpbtn").setAttribute("onclick", "location.reload()")
+}
+
+function resetpass() {
+    try {
+        var email = document.getElementById('email').value;
+
+        myApp1.auth().sendPasswordResetEmail(email)
+            .then(() => {
+                // Password reset email sent successfully
+                // Show success message to user
+                console.log('Password reset email sent successfully');
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // Show error message to user
+                console.log('Error sending password reset email:', errorCode, errorMessage);
+                if (errorCode === 'auth/invalid-email') {
+                    // console.log('Invalid email format');
+                    document.getElementById("error").innerHTML = `Invalid email format`
+                    document.getElementById("error").style.display = "block"
+                }
+                else if (errorCode === 'auth/wrong-password') {
+                    // console.log('Wrong password');
+                    document.getElementById("error").innerHTML = `Wrong password`
+                    document.getElementById("error").style.display = "block"
+                }
+                else if (errorCode === 'auth/user-not-found') {
+                    // console.log('User not found');
+                    document.getElementById("error").innerHTML = `User not found`
+                    document.getElementById("error").style.display = "block "
+                }
+            });
+    }
+    catch {
+        if (errorCode === 'auth/invalid-email') {
+            // console.log('Invalid email format');
+            document.getElementById("error").innerHTML = `Invalid email format`
+            document.getElementById("error").style.display = "block"
+        }
+        else if (errorCode === 'auth/wrong-password') {
+            // console.log('Wrong password');
+            document.getElementById("error").innerHTML = `Wrong password`
+            document.getElementById("error").style.display = "block"
+        }
+        else if (errorCode === 'auth/user-not-found') {
+            // console.log('User not found');
+            document.getElementById("error").innerHTML = `User not found`
+            document.getElementById("error").style.display = "block "
+        }
+    }
 }

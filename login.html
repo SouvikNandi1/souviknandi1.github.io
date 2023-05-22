@@ -12,7 +12,7 @@
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 </head>
 
-<body onload="console.log()">
+<body onload="console.log()" id="body">
     <h2 id="fname">Login</h2>
     <div class="main">
         <div class="ep" style="text-align: left;">
@@ -45,6 +45,7 @@
             </div>
         </div>
     </div>
+    <div style="display: none;" class="error" id="error"></div>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>

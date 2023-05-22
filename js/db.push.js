@@ -29,10 +29,26 @@ function sendMessage() {
     // .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
     console.log(localStorage.getItem("singuser"))
     // db.ref("messages/" + timestamp).set({
-    const newStr = localStorage.getItem("singuser").replace(/\./g, "@disunic");
-    db.ref(newStr).push({
-        Search,
-        YMD,
-        timestamp,
-    });
+    hdhdhdhhd()
+    // const newStr = localStorage.getItem("singuser").replace(/\./g, "@disunic");
+   
+    function hdhdhdhhd(){
+        if(localStorage.getItem("singuser") === null){
+            const newStr10 = localStorage.getItem("singuser2").replace(/\./g, "@disunic");
+            db.ref(newStr10).push({
+                Search,
+                YMD,
+                timestamp,
+            });
+        }
+        else{
+            const newStr = localStorage.getItem("singuser").replace(/\./g, "@disunic");
+            db.ref(newStr).push({
+                Search,
+                YMD,
+                timestamp,
+            });
+        }
+    }
+    
 }
