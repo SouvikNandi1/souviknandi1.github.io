@@ -1,10 +1,11 @@
 #aboutwebsite{
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 #aboutwebsite p{
     text-align: center;
     font-weight: 600;
     font-size: 16px;
+    margin-top: 0px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 #aboutwebsite button{
@@ -13,4 +14,30 @@
 #aboutwebsite a{
     text-decoration: none;
 }
+.about{
+    background: #f2f2f2;
+    display: grid;
+    /* border-top: 1px solid #a59c9c; */
+    box-shadow: 0px -6px 10px 0px #008cffbd;
+}
+.about #ab3 {
+    background: linear-gradient(#ff8000, white, #04e059);
+    padding: 13px 15px 13px 15px;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 6px;
+    /* margin-bottom: 30px; */
+    color: rgb(0, 64, 255);
+    font-weight: 700;
+}
 
+.about #ab2 {
+    font-size: 15px;
+    text-align: center;
+    padding: 15px 0 20px 0;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}

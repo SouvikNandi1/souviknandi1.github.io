@@ -218,7 +218,11 @@
     <div class="notification"></div>
     <div class="userabout" id="userabout" style="display: none;"></div>
     <div class="news" id="news" style="display: none !important;"></div>
-    <div id="aboutwebsite"></div>
+    <div class="about">
+        <p id="ab3">From India</p>
+        <p id="ab2">Version - 10.0.0</p>
+        <div id="aboutwebsite"></div>
+      </div>
     <script src="./js/indataset.js"></script>
     <script src="./api/js/disunic.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
@@ -357,11 +361,18 @@
     function userabout() {
         document.getElementById("userabout").style.display = "block"
         document.getElementById("userabout").innerHTML =
-            `<img src="${document.getElementById("disunicuser").src}"></img>
+            `
+        <div class="edits">
+            <img src="${document.getElementById("disunicuser").src}"></img>
+            <button id="useredit")">Edit <i style="font-size:13px;" class="bi bi-pen"></i></button>
+        </div>
         <div class="names">
             <p>${localStorage.getItem("username")}</p>
             <p>${localStorage.getItem("lastname")}</p>
-        </div>
+            </div>
         `
     }
+</script>
+<script>
+    
 </script>
