@@ -21,5 +21,5 @@ const firebaseConfig23 = {
           </div>
         `;
         $('#news').append(li);
+        document.getElementById("about").style.display = "grid"
   });
-    

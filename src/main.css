@@ -108,12 +108,12 @@ section {
 @keyframes ani2 {
     0% {
         margin-top: 150px;
-        width: 50%;
+
     }
 
     100% {
         margin-top: 0px;
-        width: 85%;
+
     }
 }
 

@@ -38,7 +38,7 @@ function inpclickback() {
     document.getElementById("main2").style.display = "";
     document.getElementById("logo").style.display = "inline-flex";
     document.getElementById("searchcontent").style.marginTop = "0px";
-    document.getElementById("searchcontent").style.width = "85%";
+    // document.getElementById("searchcontent").style.width = "85%";
     document.getElementById("searchcontent").style.animation = "ani2 500ms";
     document.getElementById("btn2").style.display = "none";
     document.getElementById("searchch2").style.display = "none";
