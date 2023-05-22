@@ -59,7 +59,8 @@
                 <img style="background-color: white;display: none;" id="searchch" src="" alt="" srcset=""
                     onclick="changesearchengine()">
                 <img onclick="userabout()" style="display: none;" src="" alt="" id="disunicuser">
-                <button style="display: none;" onclick="window.open('./login.html','_self')" class="btn-main-sing" id="btn-main-sing">Sign in</button>
+                <button style="display: none;" onclick="window.open('./login.html','_self')" class="btn-main-sing"
+                    id="btn-main-sing">Sign in</button>
             </div>
         </header>
         <div class="logo" id="logo">
@@ -215,7 +216,7 @@
         </div>
     </div>
     <div class="notification"></div>
-    <div class="userabout" id="userabout"></div>
+    <div class="userabout" id="userabout" style="display: none;"></div>
     <div class="news" id="news" style="display: none !important;"></div>
     <div id="aboutwebsite"></div>
     <script src="./js/indataset.js"></script>
@@ -328,16 +329,16 @@
     function singincheck() {
         if (localStorage.getItem("singuser") === null) {
             // window.open("./login.html", "_self")
-            document.getElementById("disunicuser").style.display="none"
-            document.getElementById("btn-main-sing").style.display="block"
-            localStorage.setItem("singuser2","disunicuser@gmail.com")
+            document.getElementById("disunicuser").style.display = "none"
+            document.getElementById("btn-main-sing").style.display = "block"
+            localStorage.setItem("singuser2", "disunicuser@gmail.com")
         }
-        else{
-            document.getElementById("disunicuser").style.display="block"
-            document.getElementById("btn-main-sing").style.display="none"
+        else {
+            document.getElementById("disunicuser").style.display = "block"
+            document.getElementById("btn-main-sing").style.display = "none"
         }
     }
-    function nnbmmm(){
+    function nnbmmm() {
 
     }
 
@@ -353,11 +354,14 @@
     }
 </script>
 <script>
-    function userabout(){
-        document.getElementById("userabout").innerHTML = 
-        `<img src="${document.getElementById("disunicuser").src}"></img>
-        <p>${localStorage.getItem("username")}</p>
-        <p>${localStorage.getItem("lastname")}</p>
+    function userabout() {
+        document.getElementById("userabout").style.display = "block"
+        document.getElementById("userabout").innerHTML =
+            `<img src="${document.getElementById("disunicuser").src}"></img>
+        <div class="names">
+            <p>${localStorage.getItem("username")}</p>
+            <p>${localStorage.getItem("lastname")}</p>
+        </div>
         `
     }
 </script>

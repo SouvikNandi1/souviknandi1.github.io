@@ -630,4 +630,12 @@ section {
     border-radius: 10px;
     width: 96px;
     height: 96px;
+    display: block;
+    margin: auto;
+}
+.userabout .names{
+    display: inline-flex;
+}
+.userabout p{
+    margin: 10px 3px;
 }
