@@ -58,7 +58,7 @@
                     class="bi bi-chat-square-text"></i>
                 <img style="background-color: white;display: none;" id="searchch" src="" alt="" srcset=""
                     onclick="changesearchengine()">
-                <img style="display: none;" src="" alt="" id="disunicuser">
+                <img onclick="userabout()" style="display: none;" src="" alt="" id="disunicuser">
                 <button style="display: none;" onclick="window.open('./login.html','_self')" class="btn-main-sing" id="btn-main-sing">Sign in</button>
             </div>
         </header>
@@ -215,6 +215,7 @@
         </div>
     </div>
     <div class="notification"></div>
+    <div class="userabout" id="userabout"></div>
     <div class="news" id="news" style="display: none !important;"></div>
     <div id="aboutwebsite"></div>
     <script src="./js/indataset.js"></script>
@@ -331,9 +332,6 @@
             document.getElementById("btn-main-sing").style.display="block"
             localStorage.setItem("singuser2","disunicuser@gmail.com")
         }
-        // else if (localStorage.setItem("singuser") ===localStorage.getItem("singuser")) {
-            
-        // }
         else{
             document.getElementById("disunicuser").style.display="block"
             document.getElementById("btn-main-sing").style.display="none"
@@ -352,5 +350,11 @@
         else {
             document.getElementById("btn").disabled = false
         }
+    }
+</script>
+<script>
+    function userabout(){
+        document.getElementById("userabout").innerHTML = 
+        `<img src="${localStorage.getItem("userlogo")}"></img>`
     }
 </script>
