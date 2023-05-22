@@ -55,6 +55,7 @@ function inpclickback() {
     document.getElementById("info").style.display = "flex";
     document.getElementById("moresc").style.display = "none"
     document.getElementById("news").style.display = "block"
+    document.getElementById("about").style.display="grid"
     removeandcorrect()
 }
 function removeandcorrect() {

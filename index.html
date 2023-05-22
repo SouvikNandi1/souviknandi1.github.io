@@ -77,7 +77,7 @@
                 <button style="margin-right: 5px;"><img id="searchch2" style="display: none;background-color: white;"
                         src="" alt="" onclick="changesearchengine()"></button>
                 <input onkeyup="checkinp()" autocomplete="off" type="text" placeholder="Search Everything Here ..."
-                    id="inp" name="">
+                    id="inp" name="" onclick="inputclickfunc()">
                 <button disabled id="btn" onclick="search()"><i style="font-size: 20px;"
                         class="bi bi-search"></i></button>
                 <button id="btn2" style="display: none;" onclick="inpclickback()"><i class="bi bi-x-lg"
@@ -218,7 +218,7 @@
     <div class="notification"></div>
     <div class="userabout" id="userabout" style="display: none;"></div>
     <div class="news" id="news" style="display: none !important;"></div>
-    <div class="about">
+    <div class="about" id="about">
         <p id="ab3">From India</p>
         <p id="ab2">Version - 10.0.0</p>
         <div id="aboutwebsite"></div>
@@ -329,50 +329,3 @@
 
 </script>
 
-<script>
-    function singincheck() {
-        if (localStorage.getItem("singuser") === null) {
-            // window.open("./login.html", "_self")
-            document.getElementById("disunicuser").style.display = "none"
-            document.getElementById("btn-main-sing").style.display = "block"
-            localStorage.setItem("singuser2", "disunicuser@gmail.com")
-        }
-        else {
-            document.getElementById("disunicuser").style.display = "block"
-            document.getElementById("btn-main-sing").style.display = "none"
-        }
-    }
-    function nnbmmm() {
-
-    }
-
-</script>
-<script>
-    function checkinp() {
-        if (document.getElementById("inp").value === "") {
-            document.getElementById("btn").disabled = true
-        }
-        else {
-            document.getElementById("btn").disabled = false
-        }
-    }
-</script>
-<script>
-    function userabout() {
-        document.getElementById("userabout").style.display = "block"
-        document.getElementById("userabout").innerHTML =
-            `
-        <div class="edits">
-            <img src="${document.getElementById("disunicuser").src}"></img>
-            <button id="useredit")">Edit <i style="font-size:13px;" class="bi bi-pen"></i></button>
-        </div>
-        <div class="names">
-            <p>${localStorage.getItem("username")}</p>
-            <p>${localStorage.getItem("lastname")}</p>
-            </div>
-        `
-    }
-</script>
-<script>
-    
-</script>

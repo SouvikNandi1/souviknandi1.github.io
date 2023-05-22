@@ -54,3 +54,48 @@ function darkmode() {
     document.getElementById("bidark").style.display = "none"
     document.getElementById("bilight").style.display = "block"
 }
+function inputclickfunc() {
+    document.getElementById("logo").style.display="none"
+    document.getElementById("news").style.display="none"
+    document.getElementById("about").style.display="none"
+    document.getElementById("btn2").style.display="block"
+    document.getElementById("searchcontent").style.animation="ani1 1s"
+    document.getElementById("searchcontent").style.marginTop="110px"
+}
+function userabout() {
+    document.getElementById("userabout").style.display = "block"
+    document.getElementById("userabout").innerHTML =
+        `
+    <div class="edits">
+        <img src="${document.getElementById("disunicuser").src}"></img>
+        <button id="useredit")">Edit <i style="font-size:13px;" class="bi bi-pen"></i></button>
+    </div>
+    <div class="names">
+        <p>${localStorage.getItem("username")}</p>
+        <p>${localStorage.getItem("lastname")}</p>
+        </div>
+    `
+}
+function checkinp() {
+    if (document.getElementById("inp").value === "") {
+        document.getElementById("btn").disabled = true
+    }
+    else {
+        document.getElementById("btn").disabled = false
+    }
+}
+function singincheck() {
+    if (localStorage.getItem("singuser") === null) {
+        // window.open("./login.html", "_self")
+        document.getElementById("disunicuser").style.display = "none"
+        document.getElementById("btn-main-sing").style.display = "block"
+        localStorage.setItem("singuser2", "disunicuser@gmail.com")
+    }
+    else {
+        document.getElementById("disunicuser").style.display = "block"
+        document.getElementById("btn-main-sing").style.display = "none"
+    }
+}
+function nnbmmm() {
+
+}
