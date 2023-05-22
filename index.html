@@ -355,6 +355,9 @@
 <script>
     function userabout(){
         document.getElementById("userabout").innerHTML = 
-        `<img src="${document.getElementById("disunicuser").src}"></img>`
+        `<img src="${document.getElementById("disunicuser").src}"></img>
+        <p>${localStorage.getItem("username")}</p>
+        <p>${localStorage.getItem("lastname")}</p>
+        `
     }
 </script>

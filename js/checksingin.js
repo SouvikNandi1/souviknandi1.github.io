@@ -25,6 +25,10 @@ myApp1.auth().getRedirectResult()
             var photoURL = user.photoURL;
             localStorage.setItem("singuser", user.email)
             localStorage.setItem("userlogo", photoURL)
+            var firstName = user.displayName.split(' ')[0];
+            var lastName = user.displayName.split(' ')[1];
+            localStorage.setItem("username",firstName)
+            localStorage.setItem("lastname",lastName)
             localStorage.setItem("disunicloginmode", "Google")
             window.open("./index.html", "_self")
         }

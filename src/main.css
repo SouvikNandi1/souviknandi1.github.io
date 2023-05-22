@@ -613,5 +613,21 @@ section {
 }
 
 .userabout{
-    
+    background: #ffffff;
+    box-shadow: 0px 0px 5px 0px gray;
+    width: 70%;
+    position: fixed;
+    top: 50%;
+    /* bottom: 0; */
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.userabout img{
+    border-radius: 10px;
+    width: 96px;
+    height: 96px;
 }
